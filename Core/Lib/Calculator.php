@@ -183,8 +183,8 @@ class Calculator
         // redondeamos los subtotales
         $subtotals['neto'] = round($subtotals['neto'], FS_NF0);
         $subtotals['netosindto'] = round($subtotals['netosindto'], FS_NF0);
-        // $subtotals['totalirpf'] = round($subtotals['totalirpf'], FS_NF0);
         $subtotals['totaliva'] = round($subtotals['totaliva'], FS_NF0);
+        // $subtotals['totalirpf'] = round($subtotals['totalirpf'], FS_NF0);
         $subtotals['totalirpf'] = round($subtotals['totaliva'] * 0.3, FS_NF0);
         $subtotals['totalrecargo'] = round($subtotals['totalrecargo'], FS_NF0);
         $subtotals['totalsuplidos'] = round($subtotals['totalsuplidos'], FS_NF0);

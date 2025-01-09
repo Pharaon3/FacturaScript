@@ -1,0 +1,17 @@
+{
+    "default": {
+        "coddivisa": "CLP",
+        "codimpuesto": "IVA_NORMAL",
+        "codserie": "A",
+        "codpago": "CONT",
+        "tipoidfiscal": "RUT",
+        "updatesupplierprices": true,
+        "validate_iban": false
+    },
+    "email": {
+        "enc": "ssl",
+        "host": "smtp.gmail.com",
+        "mailer": "smtp",
+        "port": "465"
+    }
+}

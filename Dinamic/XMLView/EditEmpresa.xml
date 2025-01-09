@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2023 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Artex Trading sa     <jcuello@artextrading.com>
+ * @author Carlos García Gómez  <carlos@facturascripts.com>
+-->
+<view>
+    <columns>
+        <group name="data" numcolumns="12">
+            <column name="company-name" numcolumns="4" order="100">
+                <widget type="text" fieldname="nombre" maxlength="100" required="true"/>
+            </column>
+            <column name="short-name" numcolumns="2" order="110">
+                <widget type="text" fieldname="nombrecorto" maxlength="32" required="true"/>
+            </column>
+            <column name="fiscal-mode" title="type" numcolumns="2" order="120">
+                <widget type="select" fieldname="personafisica" translate="true" required="true">
+                    <values title="is-person">1</values>
+                    <values title="company">0</values>
+                </widget>
+            </column>
+            <column name="fiscal-id" titleurl="EditSettings?activetab=EditIdentificadorFiscal" numcolumns="2" order="130">
+                <widget type="select" fieldname="tipoidfiscal" required="true">
+                    <values source="idsfiscales" fieldcode="tipoidfiscal" fieldtitle="tipoidfiscal"/>
+                </widget>
+            </column>
+            <column name="fiscal-number" numcolumns="2" order="140">
+                <widget type="text" fieldname="cifnif" maxlength="30"/>
+            </column>
+        </group>
+        <group name="address" numcolumns="12">
+            <column name="address" numcolumns="10" order="100">
+                <widget type="text" fieldname="direccion" maxlength="100" icon="fa-solid fa-map-marked" required="true"/>
+            </column>
+            <column name="post-office-box" numcolumns="2" order="110">
+                <widget type="text" fieldname="apartado" maxlength="10"/>
+            </column>
+            <column name="zip-code" numcolumns="2" order="120">
+                <widget type="text" fieldname="codpostal" maxlength="10"/>
+            </column>
+            <column name="city" numcolumns="4" order="130">
+                <widget type="datalist" fieldname="ciudad">
+                    <values source="ciudades" fieldcode="idciudad" fieldtitle="ciudad"/>
+                </widget>
+            </column>
+            <column name="province" numcolumns="3" order="140">
+                <widget type="datalist" fieldname="provincia">
+                    <values source="provincias" fieldcode="provincia" fieldtitle="provincia"/>
+                </widget>
+            </column>
+            <column name="country" titleurl="ListPais" numcolumns="3" order="150">
+                <widget type="select" fieldname="codpais" onclick="EditPais" required="true">
+                    <values source="paises" fieldcode="codpais" fieldtitle="nombre"/>
+                </widget>
+            </column>
+        </group>
+        <group name="contact-data" numcolumns="12">
+            <column name="phone" numcolumns="3" order="100">
+                <widget type="text" fieldname="telefono1" maxlength="30" icon="fa-solid fa-phone"/>
+            </column>
+            <column name="phone2" numcolumns="3" order="110">
+                <widget type="text" fieldname="telefono2" maxlength="30" icon="fa-solid fa-mobile-alt"/>
+            </column>
+            <column name="fax" numcolumns="3" order="120">
+                <widget type="text" fieldname="fax" maxlength="30" icon="fa-solid fa-fax"/>
+            </column>
+            <column name="email" numcolumns="3" order="130">
+                <widget type="text" fieldname="email" maxlength="100" icon="fa-solid fa-envelope"/>
+            </column>
+            <column name="administrator" numcolumns="3" order="140">
+                <widget type="text" fieldname="administrador"/>
+            </column>
+            <column name="website" numcolumns="3" order="150">
+                <widget type="link" fieldname="web" maxlength="100"/>
+            </column>
+        </group>
+        <group name="management" numcolumns="12" icon="fa-solid fa-cog" title="advanced">
+            <column name="start-date" numcolumns="3" order="100">
+                <widget type="date" fieldname="fechaalta"/>
+            </column>
+            <column name="vat-regime" numcolumns="3" order="110">
+                <widget type="select" fieldname="regimeniva" required="true">
+                    <values/>
+                </widget>
+            </column>
+            <column name="vat-exception" numcolumns="3" order="120">
+                <widget type="select" fieldname="excepcioniva">
+                    <values/>
+                </widget>
+            </column>
+            <column name="logo" order="130">
+                <widget type="library" fieldname="idlogo" icon="fa-solid fa-image" onclick="EditAttachedFile" accept=".gif,.jpg,.png"/>
+            </column>
+            <column name="observations" numcolumns="12" order="140">
+                <widget type="textarea" fieldname="observaciones"/>
+            </column>
+        </group>
+    </columns>
+</view>

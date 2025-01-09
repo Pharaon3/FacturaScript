@@ -1,0 +1,29 @@
+{% extends "Master/MenuBghTemplate.html.twig" %}
+
+{% block bodyHeaderOptions %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: -60px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="h2">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                            {{ trans('access-denied') }}
+                        </h1>
+                        {{ controllerName }}
+                        <hr/>
+                        <p>{{ trans('access-denied-p') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

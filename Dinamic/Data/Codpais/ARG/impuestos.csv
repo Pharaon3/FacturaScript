@@ -1,0 +1,5 @@
+codimpuesto,descripcion,iva,recargo
+IVA21,"IVA General 21%",21,0
+IVA105,"IVA Reducido 10.5%",10.5,0
+IVA27,"IVA Incrementado 27%",27,0
+IVASOE,"IVA Súper reducido 5%",5,0

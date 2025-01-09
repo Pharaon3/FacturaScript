@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : ejercicios.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the ejercicios table.
+-->
+<table>
+    <column>
+        <name>codejercicio</name>
+        <type>character varying(4)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>estado</name>
+        <type>character varying(15)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>fechafin</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>fechainicio</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idempresa</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>longsubcuenta</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>nombre</name>
+        <type>character varying(100)</type>
+        <null>NO</null>
+    </column>
+    <constraint>
+        <name>ejercicios_pkey</name>
+        <type>PRIMARY KEY (codejercicio)</type>
+    </constraint>
+    <constraint>
+        <name>ca_ejercicios_empresas</name>
+        <type>FOREIGN KEY (idempresa) REFERENCES empresas (idempresa) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+</table>

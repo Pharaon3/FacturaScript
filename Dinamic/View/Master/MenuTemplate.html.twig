@@ -1,0 +1,190 @@
+{#
+/**
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://www.gnu.org/licenses/.
+ */
+#}
+{% import 'Macro/GoogleTagManager.html.twig' as GoogleTagManager %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ constant('FS_LANG') | slice(0, 2) }}"
+      xml:lang="{{ constant('FS_LANG') | slice(0, 2) }}">
+<head>
+    {{ GoogleTagManager.head() }}
+    {% for includeView in getIncludeViews('MenuTemplate', 'HeadFirst') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% block meta %}
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>{{ fsc.title | raw }}</title>
+        <meta name="description" content="{{ trans('meta-description') }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="generator" content="FacturaScripts"/>
+        <meta name="robots" content="noindex"/>
+    {% endblock %}
+    {% block icons %}
+        <link rel="shortcut icon" href="{{ asset('Dinamic/Assets/Images/favicon.ico') }}"/>
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="{{ asset('Dinamic/Assets/Images/apple-icon-180x180.png') }}"/>
+    {% endblock %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'CssBefore') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% block css %}
+        <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('node_modules/@fortawesome/fontawesome-free/css/all.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('Dinamic/Assets/CSS/custom.css') }}?v=6"/>
+    {% endblock %}
+    {# Adds custom CSS assets #}
+    {% for css in assetManager.get('css') %}
+        <link rel="stylesheet" href="{{ css }}"/>
+    {% endfor %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'CssAfter') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'JsHeadBefore') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% block javascripts %}
+        <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('node_modules/bootbox/dist/bootbox.min.js') }}"></script>
+        <script src="{{ asset('node_modules/bootbox/dist/bootbox.locales.min.js') }}"></script>
+        <script src="{{ asset('node_modules/pace-js/pace.min.js') }}"></script>
+        <script src="{{ asset('node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script>
+        <script src="{{ asset('Dinamic/Assets/JS/Custom.js') }}?v=6"></script>
+    {% endblock %}
+    {# Adds custom JS assets #}
+    {% for js in assetManager.get('js') %}
+        <script src="{{ js }}"></script>
+    {% endfor %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'JsHeadAfter') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% if debugBarRender %}
+        {{ debugBarRender.renderHead() | raw }}
+    {% endif %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'HeadEnd') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+</head>
+{% block fullBody %}
+    <body>
+    {{ GoogleTagManager.body() }}
+    {% for includeView in getIncludeViews('MenuTemplate', 'BodyFirst') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% block navbar %}
+        <nav class="navbar navbar-expand navbar-dark bg-primary sticky-top d-print-none">
+            <div class="container-fluid">
+            {% block navbarContent %}
+                <a class="navbar-brand d-none d-sm-inline" href="{{ asset(fsc.user.homepage) }}" title="{{ trans('homepage') }}">
+                    <img src="{{ asset('Dinamic/Assets/Images/logo-white.png') }}" width="30" height="30"
+                         class="d-inline-block align-top" alt="FacturaScripts"/>
+                    <span class="d-none d-xl-inline-block">{{ fsc.empresa.nombrecorto | raw }}</span>
+                </a>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav pt-1">
+                        {% import 'Macro/Menu.html.twig' as macros %}
+                        {% for menuItem in menuManager.getMenu() %}
+                            {{ macros.showMenu(menuItem) }}
+                        {% endfor %}
+                    </ul>
+                    <ul class="navbar-nav flex-row ms-auto">
+                        {% block navbarMenuIcon %}
+                            {% for includeView in getIncludeViews('MenuTemplate', 'MenuIconBefore') %}
+                                {% include includeView['path'] %}
+                            {% endfor %}
+                            <li class="nav-item{{ template == 'MegaSearch.html.twig' ? ' active' : '' }}"
+                                title="{{ trans('search') }}">
+                                <a class="nav-link" href="MegaSearch" id="menuIconSearch">
+                                    <i class="fa-solid fa-search" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item" title="{{ trans('help') }}">
+                                <a class="nav-link" href="https://facturascripts.com/ayuda" rel="nofollow"
+                                   target="_blank" id="menuIconHelp">
+                                    <i class="fa-solid fa-question-circle" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle mr-md-2" href="#" data-bs-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false" id="menuIconUser"
+                                   title="{{ trans('user') }}">
+                                    <i class="fa-solid fa-user-circle fa-fw" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-list">
+                                    <a class="dropdown-item" href="{{ fsc.user.url() }}">
+                                        <i class="fa-solid fa-user-circle fa-fw" aria-hidden="true"></i> {{ fsc.user.nick }}
+                                    </a>
+                                    <a class="dropdown-item send-email" href="SendMail">
+                                        <i class="fa-solid fa-envelope fa-fw" aria-hidden="true"></i>
+                                        {{ trans('send-mail') }}
+                                    </a>
+                                    {% for includeView in getIncludeViews('MenuTemplate', 'MenuIconUser') %}
+                                        {% include includeView['path'] %}
+                                    {% endfor %}
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ asset('login') }}?action=logout&multireqtoken={{ formToken(false) }}">
+                                        <i class="fa-solid fa-door-open fa-fw" aria-hidden="true"></i> {{ trans('logout') }}
+                                    </a>
+                                </div>
+                            </li>
+                            {% for includeView in getIncludeViews('MenuTemplate', 'MenuIconAfter') %}
+                                {% include includeView['path'] %}
+                            {% endfor %}
+                        {% endblock %}
+                    </ul>
+                </div>
+            {% endblock %}
+            </div>
+        </nav>
+    {% endblock %}
+    <div class="pt-3">
+        {% block messages %}
+            {% include 'Macro/Toasts.html.twig' %}
+            {% from 'Macro/Utils.html.twig' import message as showMessage %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        {{ showMessage(log, ['error', 'critical'], 'danger') }}
+                        {{ showMessage(log, ['warning'], 'warning') }}
+                        {{ showMessage(log, ['notice'], 'success') }}
+                        {{ showMessage(log, ['info'], 'info') }}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        {% block bodyHeaderOptions %}
+        {% endblock %}
+    </div>
+    {% block body %}
+    {% endblock %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'JsFooter') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% for includeView in getIncludeViews('MenuTemplate', 'BodyEnd') %}
+        {% include includeView['path'] %}
+    {% endfor %}
+    {% if debugBarRender %}
+        {{ debugBarRender.render() | raw }}
+    {% endif %}
+    <br/>
+    <br/>
+    <br/>
+    <!-- execution time: {{ executionTime() }} s -->
+    </body>
+{% endblock %}
+</html>

@@ -1,0 +1,186 @@
+{% set model = fsc.getCurrentView().model %}
+
+<script>
+    let editLine = 0;
+    findSubaccount = 0;
+
+    function findSubaccountSearch(action, id, input) {
+        findSubaccount++;
+        return setTimeout(function () {
+            accEntryFormAction(action, id, $(input).parent().find('button'));
+        }, 500);
+    }
+
+    function newLineAction(code) {
+        document.getElementById("new_subaccount").value = code;
+        return accEntryFormAction('new-line', '0');
+    }
+
+    function recalculateLine(recalculate, idlinea) {
+        editLine++;
+        return setTimeout(function () {
+            accEntryFormAction(recalculate, idlinea);
+        }, 500);
+    }
+
+    function accEntryFormAction(action, selectedLine) {
+        animateSpinner('add');
+
+        if (editLine > 1) {
+            editLine--;
+            return false;
+        }
+
+        if (findSubaccount > 1) {
+            findSubaccount--;
+            return false;
+        }
+
+        editLine = 0;
+        findSubaccount = 0;
+        document.forms['accEntryForm']['action'].value = action;
+        document.forms['accEntryForm']['selectedLine'].value = selectedLine;
+
+        const formData = new FormData(document.forms['accEntryForm']);
+        const plainFormData = Object.fromEntries(formData.entries());
+        const formDataJsonString = JSON.stringify(plainFormData);
+
+        let data = new FormData();
+        data.append('action', action);
+        data.append('code', document.forms['accEntryForm']['code'].value);
+        data.append('multireqtoken', document.forms['accEntryForm']['multireqtoken'].value);
+        data.append('selectedLine', document.forms['accEntryForm']['selectedLine'].value);
+        data.append('idasiento', document.forms['accEntryForm']['idasiento'].value);
+        data.append('data', formDataJsonString);
+
+        fetch('{{ fsc.url() }}', {
+            method: 'POST',
+            body: data
+        }).then(function (response) {
+            if (response.ok) {
+                animateSpinner('remove', true);
+                return response.json();
+            }
+            animateSpinner('remove', false);
+            return Promise.reject(response);
+        }).then(function (data) {
+            if (data.header !== '') {
+                document.getElementById("accEntryFormHeader").innerHTML = data.header;
+            }
+            if (data.lines !== '') {
+                document.getElementById("accEntryFormLines").innerHTML = data.lines;
+            }
+            if (data.footer !== '') {
+                document.getElementById("accEntryFormFooter").innerHTML = data.footer;
+            }
+            if (data.list !== '') {
+                document.getElementById("findSubaccountList").innerHTML = data.list;
+            }
+            if (Array.isArray(data.messages) && data.messages.length > 0) {
+                data.messages.forEach(item => alert(item.message));
+                $("#new_subaccount").focus();
+            } else if (document.forms['accEntryForm']['action'].value === 'new-line') {
+                $(".line-debit:last").focus().select();
+            }
+        }).catch(function (error) {
+            alert('error');
+            console.warn(error);
+        });
+
+        return false;
+    };
+
+    function accEntryFormSave(action, selectedLine) {
+        animateSpinner('add');
+        setOrdenLines();
+
+        document.forms['accEntryForm']['action'].value = action;
+        document.forms['accEntryForm']['selectedLine'].value = selectedLine;
+
+        const formData = new FormData(document.forms['accEntryForm']);
+        const plainFormData = Object.fromEntries(formData.entries());
+        const formDataJsonString = JSON.stringify(plainFormData);
+
+        let data = new FormData();
+        data.append('action', action);
+        data.append('code', document.forms['accEntryForm']['code'].value);
+        data.append('multireqtoken', document.forms['accEntryForm']['multireqtoken'].value);
+        data.append('selectedLine', document.forms['accEntryForm']['selectedLine'].value);
+        data.append('idasiento', document.forms['accEntryForm']['idasiento'].value);
+        data.append('data', formDataJsonString);
+
+        fetch('{{ fsc.url() }}', {
+            method: 'POST',
+            body: data
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            animateSpinner('remove', false);
+            return Promise.reject(response);
+        }).then(function (data) {
+            if (Array.isArray(data.messages)) {
+                data.messages.forEach(item => alert(item.message));
+            }
+            if (data.ok) {
+                window.location.replace(data.newurl);
+            } else {
+                animateSpinner('remove', true);
+            }
+        }).catch(function (error) {
+            alert('error');
+            console.warn(error);
+        });
+
+        return false;
+    };
+
+    function setOrdenLines() {
+        let orderInputs = $("input[name^='orden_']");
+        let count = orderInputs.length * 10;
+        orderInputs.each(function (index) {
+            $(this).val(count - (index * 10));
+        });
+    }
+
+    function sortableEnable() {
+        $("#accEntryFormLines").sortable({
+            update: function (event, ui) {
+                setOrdenLines();
+            }
+        });
+        $("#accEntryFormLines").sortable("option", "disabled", false);
+        $("#accEntryFormLines").disableSelection();
+    }
+
+    function sortableDisable() {
+        $("#accEntryFormLines").sortable("disable");
+    }
+
+    $(document).ready(function () {
+        {% if model.editable %}
+        let sortable = false;
+
+        $(document).on('click', '#sortableBtn', function () {
+            if (sortable) {
+                sortableDisable();
+                sortable = false;
+                $(this).removeClass('btn-secondary').addClass('btn-light');
+            } else {
+                sortableEnable();
+                sortable = true;
+                $(this).removeClass('btn-light').addClass('btn-secondary');
+            }
+        });
+        {% endif %}
+    });
+</script>
+
+<form name="accEntryForm" method="post">
+    {{ formToken() }}
+    <input type="hidden" name="action"/>
+    <input type="hidden" name="code" value="{{ model.primaryColumnValue() }}"/>
+    <input type="hidden" name="{{ model.primaryColumn() }}" value="{{ model.primaryColumnValue() }}"/>
+    <input type="hidden" name="selectedLine"/>
+    {{ fsc.renderAccEntryForm(model, model.getLines()) | raw }}
+</form>

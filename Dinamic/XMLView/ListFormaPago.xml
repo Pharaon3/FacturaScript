@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Artex Trading sa     <jcuello@artextrading.com>
+ * @author Carlos García Gómez  <carlos@facturascripts.com>
+-->
+<view>
+    <columns>
+        <column name="company" order="90">
+            <widget type="select" fieldname="idempresa">
+                <values source="empresas" fieldcode="idempresa" fieldtitle="nombrecorto"/>
+            </widget>
+        </column>
+        <column name="code" order="100">
+            <widget type="text" fieldname="codpago"/>
+        </column>
+        <column name="description" order="110">
+            <widget type="textarea" fieldname="descripcion"/>
+        </column>
+        <column name="expiration" display="right" order="120">
+            <widget type="number" fieldname="plazovencimiento" decimal="0"/>
+        </column>
+        <column name="expiration-type" numcolumns="4" order="130">
+            <widget type="select" fieldname="tipovencimiento" translate="true">
+                <values title="days">days</values>
+                <values title="weeks">weeks</values>
+                <values title="months">months</values>
+                <values title="years">years</values>
+            </widget>
+        </column>
+        <column name="paid" display="center" order="140">
+            <widget type="checkbox" fieldname="pagado"/>
+        </column>
+        <column name="domiciled" display="center" order="150">
+            <widget type="checkbox" fieldname="domiciliado"/>
+        </column>
+        <column name="bank-account" display="right" order="160">
+            <widget type="select" fieldname="codcuentabanco" onclick="EditCuentaBanco">
+                <values source="cuentasbanco" fieldcode="codcuenta" fieldtitle="descripcion"/>
+            </widget>
+        </column>
+    </columns>
+    <rows>
+        <row type="status">
+            <option color="danger" fieldname="activa" title="inactive">0</option>
+            <option color="success" fieldname="pagado" title="paid">1</option>
+            <option color="info" fieldname="domiciliado" title="domiciled">1</option>
+        </row>
+    </rows>
+</view>

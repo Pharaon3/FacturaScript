@@ -1,0 +1,302 @@
+{#
+/**
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://www.gnu.org/licenses/.
+ */
+#}
+{% extends "Master/MenuBghTemplate.html.twig" %}
+{% import 'Macro/Utils.html.twig' as Utils %}
+
+{% block body %}
+    <div class="bg-light pt-4 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="h4">
+                        {% if fsc.getPageData().name == fsc.user.homepage %}
+                            <a class="btn btn-sm btn-secondary align-bottom active"
+                               href="{{ fsc.url() }}?defaultPage=FALSE" title="{{ trans('marked-as-homepage') }}">
+                                <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+                            </a>
+                        {% else %}
+                            <a class="btn btn-sm btn-secondary align-bottom" href="{{ fsc.url() }}?defaultPage=TRUE"
+                               title="{{ trans('mark-as-homepage') }}">
+                                <i class="far fa-bookmark" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                        <span class="ms-2">{{ fsc.title }}</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: -40px;">
+        {% block sectionLinks %}
+            <div class="row">
+                <div class="col">
+                    {{ _self.sectionLinks(fsc) }}
+                </div>
+            </div>
+        {% endblock %}
+        {% if fsc.showBackupWarning() %}
+            <div class="row">
+                <div class="col">
+                    <div class="card bg-warning shadow mb-3">
+                        <div class="card-body">
+                            <div class="h3">
+                                <i class="fa-solid fa-save me-1"></i> {{ trans('dashboard-backup') }}
+                            </div>
+                            <p class="card-text">{{ trans('dashboard-backup-p') }}</p>
+                            <ul class="mb-0">
+                                <li>{{ trans('dasboard-backup-li1') }}</li>
+                                <li>{{ trans('dasboard-backup-li2') }}</li>
+                                <li>{{ trans('dasboard-backup-li3') }}</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer p-2">
+                            <a href="https://facturascripts.com/plugins/backup" target="_blank" rel="nofollow"
+                               class="btn btn-secondary"> Backup
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% elseif fsc.updated == false %}
+            <div class="mb-3">
+                {{ Utils.updateInstall() }}
+            </div>
+        {% elseif fsc.registered == false %}
+            <div class="mb-3">
+                {{ Utils.registerInstall() }}
+            </div>
+        {% endif %}
+        {% block sectionStats %}
+            {{ _self.sectionStats(fsc) }}
+        {% endblock %}
+        {% block sections %}
+            <div class="row">
+                <div class="col">
+                    {% if 'receipts' in fsc.sections %}
+                        {{ _self.sectionReceipts(fsc) }}
+                    {% endif %}
+                    {% if 'low-stock' in fsc.sections %}
+                        {{ _self.sectionLowStock(fsc) }}
+                    {% endif %}
+                </div>
+            </div>
+            {{ _self.sectionNews(fsc) }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% macro drawStatsBox(fsc, group, color, ismoney) %}
+    <div class="card shadow mb-3">
+        <div class="card-body p-2 text-white {{ color }}">
+            <h2 class="h5 text-center mb-0">
+                {{ trans(group) }}
+            </h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                {% for key, value in fsc.stats[group] %}
+                    <tr>
+                        <td>{{ trans(key) }}</td>
+                        {% set color = value < 0 ? ' text-danger' : '' %}
+                        {% if ismoney %}
+                            <td class="text-end{{ color }}">{{ money(value) }}</td>
+                        {% else %}
+                            <td class="text-end">{{ value }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro sectionLinks(fsc) %}
+    <div class="card shadow mb-3">
+        <div class="ps-3 pt-1 pe-3 pb-3">
+            <div class="row">
+                <div class="col-md">
+                    <h2 class="h4 mt-3 mb-1">
+                        <i class="fa-solid fa-plus fa-fw"></i> {{ trans('create') }}
+                    </h2>
+                    <ul class="mb-1">
+                        {% for link, label in fsc.createLinks %}
+                            <li>
+                                <a href="{{ link }}">{{ trans(label) }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if fsc.openLinks %}
+                    <div class="col-md">
+                        <h2 class="h4 mt-3 mb-1">
+                            <i class="fa-solid fa-folder-open fa-fw"></i> {{ trans('open') }}
+                        </h2>
+                        <ul class="mb-1">
+                            {% for link in fsc.openLinks %}
+                                <li>
+                                    {{ trans(link.type) }}
+                                    <a href="{{ link.url }}">{{ link.name }}</a>
+                                    <span class="text-muted">{{ link.date }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="col-md">
+                    <h2 class="h4 mt-3 mb-1">
+                        <i class="fa-solid fa-question-circle fa-fw"></i> {{ trans('help') }}
+                    </h2>
+                    <ul class="mb-1">
+                        <li>
+                            <a href="https://facturascripts.com/publicaciones/configuracion-15" rel="nofollow"
+                               target="_blank">Configuración</a>
+                        </li>
+                        <li>
+                            <a href="https://facturascripts.com/publicaciones/primeros-pasos-303" rel="nofollow"
+                               target="_blank">Primeros pasos</a>
+                        </li>
+                        <li>
+                            <a href="https://facturascripts.com/publicaciones/problemas-frecuentes-469" rel="nofollow"
+                               target="_blank">Problemas frecuentes</a>
+                        </li>
+                        <li>
+                            <a href="https://forms.gle/WhGgWWB6EbWjBNna6" rel="nofollow"
+                               target="_blank">Encuesta de uso 2024/25
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facturascripts.com/contacto" rel="nofollow" target="_blank">Soporte
+                                <i class="far fa-comment-dots"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro sectionLowStock(fsc) %}
+    <div class="card shadow mb-3">
+        <div class="p-3">
+            <h2 class="h4 mb-0">
+                <i class="fa-solid fa-pallet fa-fw"></i> {{ trans('minimum-stock') }}
+            </h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>{{ trans('reference') }}</th>
+                    <th>{{ trans('warehouse') }}</th>
+                    <th class="text-end">{{ trans('minimum-stock') }}</th>
+                    <th class="text-end">{{ trans('available') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for stock in fsc.lowStock %}
+                    <tr class="clickableRow table-danger" data-href="{{ stock.url() }}">
+                        <td>{{ stock.referencia }}</td>
+                        <td>{{ stock.codalmacen }}</td>
+                        <td class="text-end">{{ number(stock.stockmin) }}</td>
+                        <td class="text-end">{{ number(stock.disponible) }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro sectionNews(fsc) %}
+    {% for news in fsc.news %}
+        <div class="row">
+            <div class="col">
+                <div class="card shadow mb-3">
+                    <div class="card-header">
+                        <span class="float-end">{{ news.fecha }}</span>
+                        <a href="{{ news.url }}" target="_blank">{{ news.title | raw }}</a>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <a href="{{ news.url }}" target="_blank" class="btn btn-outline-secondary">
+                                    <i class="far fa-newspaper fa-3x"></i>
+                                </a>
+                            </div>
+                            <div class="col">{{ news.body | raw }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+{% macro sectionReceipts(fsc) %}
+    <div class="card shadow mb-3">
+        <div class="p-3">
+            <span class="float-end badge bg-danger">{{ trans('unpaid') }}</span>
+            <h2 class="h4 mb-0">
+                <i class="fa-solid fa-dollar-sign fa-fw"></i>
+                {{ trans('receipts') }}
+            </h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>{{ trans('customer') }}</th>
+                    <th>{{ trans('observations') }}</th>
+                    <th class="text-end">{{ trans('amount') }}</th>
+                    <th class="text-end">{{ trans('expiration') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for receipt in fsc.receipts %}
+                    <tr class="clickableRow table-danger" data-href="{{ receipt.url() }}">
+                        <td>{{ receipt.getSubject().nombre | raw }}</td>
+                        <td>{{ receipt.observaciones | raw }}</td>
+                        <td class="text-end text-nowrap">{{ money(receipt.importe) }}</td>
+                        <td class="text-end text-nowrap">{{ receipt.vencimiento }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro sectionStats(fsc) %}
+    <div class="row">
+        <div class="col-sm-6 col-lg-3">
+            {{ _self.drawStatsBox(fsc, 'purchases', 'bg-danger', true) }}
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            {{ _self.drawStatsBox(fsc, 'sales', 'bg-success', true) }}
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            {{ _self.drawStatsBox(fsc, 'taxes', 'bg-warning', true) }}
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            {{ _self.drawStatsBox(fsc, 'new-customers', 'bg-info', false) }}
+        </div>
+    </div>
+{% endmacro %}
