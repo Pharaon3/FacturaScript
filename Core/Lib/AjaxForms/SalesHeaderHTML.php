@@ -31,8 +31,6 @@ use FacturaScripts\Core\Tools;
 use FacturaScripts\Dinamic\Model\Ciudad;
 use FacturaScripts\Dinamic\Model\Pais;
 use FacturaScripts\Dinamic\Model\Provincia;
-use FacturaScripts\Core\Base\Translator;
-use FacturaScripts\Core\DataSrc\Retenciones;
 
 /**
  * Description of SalesHeaderHTML
@@ -184,9 +182,6 @@ class SalesHeaderHTML
             . self::renderNewBtnFields($model)
             . self::renderField($model, '_paid')
             . self::renderField($model, 'idestado')
-            . '</div>'
-            . '<div style="display: none;">'
-            .  self::renderField($model, 'irpf')
             . '</div>'
             . '</div>';
     }
@@ -533,7 +528,7 @@ class SalesHeaderHTML
                 return $html;
             }
         }
-        $i18n = new Translator();
+
         switch ($field) {
             case '_children':
                 return self::children($model);
@@ -639,9 +634,6 @@ class SalesHeaderHTML
 
             case 'user':
                 return self::user($model);
-            
-            case 'irpf':
-                return self::irpf($model, 'selectRetention');
         }
 
         return null;
@@ -724,25 +716,4 @@ class SalesHeaderHTML
         }
         return $html;
     }
-
-    private static function irpf(SalesDocument $model, string $jsFunc): string
-    {
-        $options = ['<option value="">------</option>'];
-        foreach (Retenciones::all() as $ret) {
-            // si la retención no está activa o seleccionada, la saltamos
-            // if (!$ret->activa && $line->irpf != $ret->porcentaje) {
-            //     continue;
-            // }
-
-            $options[] = '<option value="' . $ret->porcentaje . '">' . $ret->descripcion . '</option>';
-        }
-
-        $attributes = 'name="irpf" onchange="return ' . $jsFunc . '(event);"';
-        return '<div class="col-6" id="retention-select">'
-            . '<div class="mb-2"><a href="ListImpuesto?activetab=ListRetencion">' . Tools::lang()->trans('retention') . '</a>'
-            . '<select ' . $attributes . ' class="form-select">' . implode('', $options) . '</select>'
-            . '</div>'
-            . '</div>';
-    }
-
 }

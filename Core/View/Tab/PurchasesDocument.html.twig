@@ -303,7 +303,6 @@
         // reutilizamos los inputs del formulario del header
         // para mantener formatos y valores dinamicos
         const paymentMethodsHTML = $('#payment-methods').html();
-        const retentionHTML = $('#retention-methods').html();
         const documentDateHTML = $('#document-date').html();
 
         const html = `
@@ -313,9 +312,6 @@
                   <div class="modal-body">
                     <div class="mb-3" id="payment-methods-modal">
                         ${paymentMethodsHTML}
-                    </div>
-                    <div class="mb-3" id="retention-date-modal">
-                        ${retentionHTML}
                     </div>
                     <div class="mb-3" id="document-date-modal">
                         ${documentDateHTML}

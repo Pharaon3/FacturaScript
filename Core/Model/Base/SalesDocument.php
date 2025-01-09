@@ -162,7 +162,6 @@ abstract class SalesDocument extends TransformerDocument
         $this->direccion = '';
         $this->totalbeneficio = 0.0;
         $this->totalcoste = 0.0;
-        $this->totalrecargo = 0.0;
 
         // select default currency
         $coddivisa = Tools::settings('default', 'coddivisa');
