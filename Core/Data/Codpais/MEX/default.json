@@ -1,0 +1,17 @@
+{
+    "default": {
+        "coddivisa": "MXN",
+        "codimpuesto": "IVA16GEN",
+        "codserie": "A",
+        "codpago": "CONT",
+        "tipoidfiscal": "RFC",
+        "updatesupplierprices": true,
+        "validate_iban": false
+    },
+    "email": {
+        "enc": "ssl",
+        "host": "smtp.gmail.com",
+        "mailer": "smtp",
+        "port": "465"
+    }
+}

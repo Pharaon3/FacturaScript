@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : lineasfacturasprov.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the lineasfacturasprov table.
+-->
+<table>
+    <column>
+        <name>actualizastock</name>
+        <type>integer</type>
+        <null>NO</null>
+        <default>1</default>
+    </column>
+    <column>
+        <name>cantidad</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codimpuesto</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>descripcion</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>dtopor</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>dtopor2</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>excepcioniva</name>
+        <type>character varying(20)</type>
+    </column>
+    <column>
+        <name>idfactura</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idlinea</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idlinearect</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>idproducto</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>irpf</name>
+        <type>double precision</type>
+    </column>
+    <column>
+        <name>iva</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>orden</name>
+        <type>integer</type>
+        <default>0</default>
+    </column>
+    <column>
+        <name>pvpsindto</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>pvptotal</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>pvpunitario</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>recargo</name>
+        <type>double precision</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>referencia</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>servido</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>suplido</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <constraint>
+        <name>lineasfacturasprov_pkey</name>
+        <type>PRIMARY KEY (idlinea)</type>
+    </constraint>
+    <constraint>
+        <name>ca_lineasfacturasprov_facturasprov2</name>
+        <type>FOREIGN KEY (idfactura) REFERENCES facturasprov (idfactura) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_lineasfacturasprov_linearect2</name>
+        <type>FOREIGN KEY (idlinearect) REFERENCES lineasfacturasprov (idlinea) ON DELETE SET NULL ON UPDATE CASCADE
+        </type>
+    </constraint>
+    <constraint>
+        <name>ca_lineasfacturasprov_impuestos</name>
+        <type>FOREIGN KEY (codimpuesto) REFERENCES impuestos (codimpuesto) ON DELETE RESTRICT ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_lineasfacturasprov_productos</name>
+        <type>FOREIGN KEY (idproducto) REFERENCES productos (idproducto) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

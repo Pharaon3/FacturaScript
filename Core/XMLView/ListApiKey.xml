@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2019 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Carlos García Gómez      <carlos@facturascripts.com>
+ * @author Francesc Pineda Segarra  <francesc.pineda.segarra@gmail.com>
+-->
+<view>
+    <columns>
+        <column name="code" order="100">
+            <widget type="text" fieldname="id" onclick="EditApiKey" />
+        </column>
+        <column name="description" order="110">
+            <widget type="text" fieldname="description" />
+        </column>
+        <column name="api-key" order="120">
+            <widget type="text" fieldname="apikey" />
+        </column>
+        <column name="enabled" display="center" order="130">
+            <widget type="checkbox" fieldname="enabled" />
+        </column>
+        <column name="full-access" display="center" order="140">
+            <widget type="checkbox" fieldname="fullaccess" />
+        </column>
+        <column name="user" order="150">
+            <widget type="select" fieldname="nick" required="true">
+                <values source="users" fieldcode="nick" fieldtitle="nick" />
+            </widget>
+        </column>
+        <column name="created" display="right" order="160">
+            <widget type="date" fieldname="creationdate" />
+        </column>
+    </columns>
+    <rows>
+        <row type="status">
+            <option color="danger" fieldname="enabled">0</option>
+            <option color="info" fieldname="fullaccess">1</option>
+            <option color="success" fieldname="enabled">1</option>
+        </row>
+    </rows>
+</view>

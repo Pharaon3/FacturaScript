@@ -1,0 +1,33 @@
+/cache/
+/Cache/
+/Dinamic/
+/doc/
+/MyFiles/
+/node_modules/
+/Plugins/
+/vendor/
+.DS_Store
+.htaccess
+config.php
+config-mysql.php
+config-postgresql.php
+generateDoc.sh
+package-lock.json
+*.cache
+*.lock
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# netbeans
+/nbproject/
+
+# phpstorm
+/.idea/
+
+# vscode
+.vscode
+*.code-workspace
+.history

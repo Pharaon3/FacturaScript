@@ -1,0 +1,955 @@
+ciudad,idprovincia,codeid,latitude,longitude
+Abancay,3,,-13.63389,-72.88139
+"Abancay Province",3,,-13.72569,-72.8385
+Acarí,4,,-15.42393,-74.61361
+"Acobamba Province",9,,-12.80264,-74.58371
+"Acomayo Province",8,,-13.95575,-71.6563
+"Aija Province",2,,-9.77803,-77.66454
+"Alerta Airport",17,,-11.65018,-69.22942
+Allincapac,21,,-13.90977,-70.40787
+"Allpahuayo-Mishana National Reserve",16,,-3.93208,-73.60703
+"Alto Amazonas Province",16,,-5.81276,-76.10229
+Amazonas,1,,-5,-78.23333
+"Ambo Province",10,,-10.22091,-76.22729
+Ancash,2,,-9.5,-77.75
+Andahuaylas,3,,-13.65556,-73.38722
+"Andahuaylas Airport",3,,-13.70641,-73.35038
+"Andahuaylas Province",3,,-13.77195,-73.40231
+"Andoas Airport",16,,-2.79671,-76.46562
+"Angaraes Province",9,,-13.04307,-74.62717
+"Anta Huaraz",2,,-9.34744,-77.59839
+"Anta Province",8,,-13.48883,-72.36923
+"Antabamba Province",3,,-14.45336,-72.72926
+"Antonio Raymondi Province",2,,-9.11311,-77.05249
+"Apacheta Limani",18,,-17.01278,-70.49125
+"Apurímac Department",3,,-14,-73
+Arequipa,4,,-16,-72.25
+"Arequipa Province",4,,-16.34987,-71.50827
+Ascope,13,,-7.72414,-79.15151
+"Asentamiento Humano Tutumo",15,,-12.58436,-76.60647
+"Asunción Province",2,,-9.18987,-77.39878
+Atalaya,25,,-10.73067,-73.75867
+"Ayabaca Province",20,,-4.71384,-79.80356
+Ayacucho,5,,-14,-74.25
+Ayaviri,21,,-14.88639,-70.58889
+"Aymaraes Province",3,,-14.35286,-73.24043
+Azángaro,21,,-14.90843,-70.19616
+"Azángaro Province",21,,-14.79061,-70.16047
+"Bagua Province",1,,-5.09006,-78.39972
+"Bahuaja-Sonene National Park",21,,-13.50924,-69.57376
+Barranca,15,,-10.66599,-77.65707
+Belen,16,,-3.76016,-73.2497
+Bellavista,22,,-7.63825,-76.31932
+"Bolívar Province",13,,-7.30143,-77.73086
+"Bolognesi Province",2,,-10.10723,-77.14804
+"Bongará Province",1,,-5.68341,-77.87308
+"Caballococha Airport",16,,-3.91686,-70.5082
+"Cajabamba Province",6,,-7.55637,-78.08903
+Cajamarca,6,,-7.13918,-78.4894
+"Cajamarca Department",6,,-6.25,-78.83333
+"Cajamarca Province",6,,-7.19721,-78.46559
+"Cajatambo Province",15,,-10.52469,-77.02233
+"Calca Province",8,,-12.97288,-72.04383
+Callao,7,,-11.94753,-77.10365
+Camaná,4,,-16.62375,-72.71055
+"Camaná Province",4,,-16.4741,-72.76633
+"Canas Province",8,,-14.45231,-71.33615
+"Canchis Province",8,,-14.08035,-71.12653
+Candarave,23,,-17.11397,-70.30211
+"Cañete Province",15,,-12.77871,-76.38438
+"Cangallo Province",5,,-13.573,-74.389
+"Canta Province",15,,-11.46667,-76.61667
+"Capitán FAP Renán Elías Olivera Airport",11,,-13.74486,-76.22028
+"Carabaya Province",21,,-13.84769,-70.22288
+Caral,15,,-10.88872,-77.50359
+"Caravelí Province",4,,-15.7269,-74.12762
+Caraz,2,,-9.04692,-77.80901
+"Carhuaz Province",2,,-9.317,-77.551
+"Carlos Fermín Fitzcarrald Province",2,,-9.04415,-77.24168
+"Casma Province",2,,-9.47638,-78.24738
+"Castilla Province",4,,-15.62481,-72.37998
+Catacaos,20,,-5.26667,-80.68333
+Caurapequeña,21,,-16.85946,-69.57198
+"Caylloma Province",4,,-15.64462,-71.55715
+Celendín,6,,-6.8659,-78.14585
+"Celendín Province",6,,-6.79292,-78.21703
+"Centro histórico de Lima",15,,-12.05139,-77.04306
+"Cerro Acopuquio Punta",15,,-12.68389,-75.79083
+"Cerro Ajo Colluna",4,,-15.49222,-71.67556
+"Cerro Albaro",4,,-15.20649,-72.16852
+"Cerro Alejopunta",4,,-15.40333,-72.05433
+"Cerro Almacen",12,,-11.93906,-75.86327
+"Cerro Alto Huayhuay",12,,-11.48107,-75.47877
+"Cerro Altos Guangush",15,,-10.83115,-76.64859
+"Cerro Amapola",15,,-12.61159,-75.70691
+"Cerro Ancachita",4,,-15.63194,-71.53389
+"Cerro Anccasi",4,,-15.935,-71.45111
+"Cerro Anchaca",4,,-15.4576,-71.76942
+"Cerro Ancochaullane",23,,-17.57944,-69.78611
+"Cerro Ancuni",15,,-11.64028,-76.42556
+"Cerro Andallullo",4,,-15.385,-71.8125
+"Cerro Antaesquina",12,,-11.86743,-75.97754
+"Cerro Antahualcan",15,,-11.13472,-76.51056
+"Cerro Antajarane",4,,-15.02797,-72.76462
+"Cerro Antajave",23,,-17.33669,-69.84844
+"Cerro Antaperuro",15,,-11.46635,-76.43333
+"Cerro Antapunco",4,,-15.10806,-72.98722
+"Cerro Apacheta",4,,-15.38646,-72.18274
+"Cerro Ararac",15,,-10.36329,-76.84239
+"Cerro Asnohuañusja",4,,-15.4279,-72.1832
+"Cerro Aspara",15,,-12.61889,-75.52583
+"Cerro Astomarca",15,,-12.32724,-75.6952
+"Cerro Atarchuco",15,,-12.32,-75.76306
+"Cerro Atarquipa",4,,-15.5552,-72.395
+"Cerro Auquin",15,,-10.58458,-76.86612
+"Cerro Auquisonco",15,,-12.57749,-75.61738
+"Cerro Ayccaje",4,,-15.38528,-72.05833
+"Cerro Baquetane",4,,-16.03562,-71.51028
+"Cerro Barroso",23,,-17.55694,-69.59417
+"Cerro Bayo Grande",15,,-10.33417,-76.98472
+"Cerro Buarahuarani",23,,-17.41361,-69.665
+"Cerro Buena Vista",4,,-15.66028,-72.36694
+"Cerro Buenavista",15,,-10.47056,-76.89667
+"Cerro Caja Real",15,,-12.17111,-75.64861
+"Cerro Calientes",23,,-17.165,-70.20333
+"Cerro Callatia",21,,-15.39397,-70.93699
+"Cerro Calqui",4,,-15.06111,-72.80667
+"Cerro Candama",12,,-11.76644,-75.97089
+"Cerro Carepiña",23,,-17.49569,-69.88954
+"Cerro Carhuachuco",9,,-12.30068,-74.96199
+"Cerro Carhuajasa",9,,-12.85116,-75.43464
+"Cerro Carisla",15,,-12.64917,-75.54833
+"Cerro Casiri",4,,-15.46194,-72.17139
+"Cerro Caudalosa",15,,-10.46917,-76.77333
+"Cerro Cayco",19,,-10.37222,-76.56917
+"Cerro Ccaccahuaycho",21,,-14.68272,-69.3021
+"Cerro Ccaycco",8,,-14.91473,-71.63952
+"Cerro Ccella Ccella",4,,-15.24861,-71.945
+"Cerro Cerani",4,,-15.49013,-72.17967
+"Cerro Charapurane",23,,-17.46456,-69.71959
+"Cerro Chaupijanca",10,,-10.11167,-76.92167
+"Cerro Chayco",4,,-15.53694,-71.72722
+"Cerro Chila",4,,-15.40647,-72.16596
+"Cerro Chila Pillune",4,,-15.40694,-72.18778
+"Cerro Chillahuani",23,,-17.60806,-69.86583
+"Cerro Chinchón",4,,-15.33023,-72.20796
+"Cerro Chipsuria",19,,-11.08814,-76.48362
+"Cerro Chocñacota",21,,-14.31639,-70.75111
+"Cerro Chocta",15,,-12.56167,-75.76111
+"Cerro Choetambo",4,,-15.47917,-72.59694
+"Cerro Chontacoñaupachi",15,,-12.62648,-75.71323
+"Cerro Choquecota",21,,-16.65926,-69.96376
+"Cerro Choquepirhua",4,,-15.42036,-72.16765
+"Cerro Chuaña",4,,-15.41161,-71.73178
+"Cerro Chuañuma",4,,-15.3655,-72.22369
+"Cerro Chuañupunta",4,,-15.44385,-72.0777
+"Cerro Chuigo",12,,-11.45198,-76.33783
+"Cerro Chumpe",12,,-11.73889,-76.03944
+"Cerro Chunua",8,,-14.17667,-71.02333
+"Cerro Chupica",8,,-14.03444,-71.26306
+"Cerro Chuquichuccho",12,,-11.65806,-76.21806
+"Cerro Chuquihua",4,,-15.31093,-72.012
+"Cerro Churilaca",18,,-16.78982,-70.35425
+"Cerro Chururo",15,,-10.97083,-76.61056
+"Cerro Chururuyo",15,,-10.93278,-76.60611
+"Cerro Colihuiri",4,,-15.25222,-71.03778
+"Cerro Coline",4,,-15.94972,-71.43889
+"Cerro Collquepucro",15,,-11.97083,-76.02917
+"Cerro Colqueccahua",21,,-15.2925,-70.94889
+"Cerro Colquerane",21,,-15.92231,-70.84568
+"Cerro Colquere",4,,-15.54733,-71.6877
+"Cerro Condor Sayana",4,,-15.25083,-72.72722
+"Cerro Condorame",4,,-15.54145,-71.26428
+"Cerro Condorcacha",4,,-15.25343,-72.17548
+"Cerro Condori",4,,-15.01779,-72.47263
+"Cerro Condoriquina",21,,-13.98716,-69.79314
+"Cerro Condorsalla",4,,-14.79087,-71.95407
+"Cerro Condorsenja",15,,-10.48833,-76.74222
+"Cerro Contrahierbas",13,,-7.71694,-77.56139
+"Cerro Corazón",18,,-17.03142,-70.52802
+"Cerro Coropuna",4,,-15.47366,-72.07407
+"Cerro Cosana",4,,-15.23972,-71.71972
+"Cerro Coverane Gihuana",21,,-17.18111,-69.87833
+"Cerro Culcayoc",15,,-11.85056,-76.11306
+"Cerro Cule",15,,-10.44392,-76.78486
+"Cerro Cullpacucho",4,,-14.79996,-72.41602
+"Cerro Curihuay",12,,-11.46265,-76.35645
+"Cerro Cusurucocha",15,,-11.12861,-76.59778
+"Cerro Cuzcoccahuarina",8,,-14.04056,-71.10639
+"Cerro de Pasco",19,,-10.66748,-76.25668
+"Cerro Escalera Apacheta",4,,-15.53306,-72.42083
+"Cerro Esgueracocha",15,,-10.53784,-76.83211
+"Cerro Flor de Lutó",10,,-10.43722,-76.76306
+"Cerro Fundicion",21,,-15.33083,-70.6075
+"Cerro Fuysia",4,,-15.4557,-72.10892
+"Cerro Gaico",19,,-10.44472,-75.98333
+"Cerro Gollarcocha",15,,-10.7,-76.995
+"Cerro Gueshgue Chupan",10,,-9.78187,-76.76445
+"Cerro Herpay",8,,-13.34472,-72.37417
+"Cerro Huachalanqui",4,,-15.41778,-72.26333
+"Cerro Huachhua Runtuna",15,,-12.27167,-75.7425
+"Cerro Huactaña",4,,-15.46347,-72.05941
+"Cerro Huacullani",4,,-15.93417,-71.51489
+"Cerro Huagapalca",4,,-15.473,-72.47823
+"Cerro Huagra",4,,-15.12722,-71.85
+"Cerro Huaillaccocha",4,,-15.4215,-71.9107
+"Cerro Huajancallay",9,,-13.27651,-74.79135
+"Cerro Huallacancha",2,,-9.41893,-76.95593
+"Cerro Huaman Marca",12,,-11.37386,-76.32032
+"Cerro Huamanchoque",8,,-13.25694,-72.01167
+"Cerro Huamanrazo",9,,-12.91022,-75.03963
+"Cerro Huamanripa",15,,-12.31833,-75.73278
+"Cerro Huamashmachay",10,,-10.10556,-76.96167
+"Cerro Huampuro",15,,-12.56861,-75.72333
+"Cerro Huañacagua",4,,-15.3315,-72.24177
+"Cerro Huanaccani",8,,-14.08528,-71.04139
+"Cerro Huanacotaqui",4,,-15.30237,-72.11775
+"Cerro Huanca",4,,-15.28783,-72.19324
+"Cerro Huancravilca",12,,-12.4763,-75.40139
+"Cerro Huancure",21,,-17.14166,-69.68052
+"Cerro Huañuma",18,,-17.06496,-70.45885
+"Cerro Huapampa",15,,-11.08611,-76.53722
+"Cerro Huaraco",4,,-15.16702,-72.49651
+"Cerro Huarcuro",15,,-12.41167,-75.98528
+"Cerro Huarisallani",8,,-14.09861,-71.03722
+"Cerro Huarmijarula",15,,-12.44583,-75.70639
+"Cerro Huarmipunta",12,,-11.86972,-74.87083
+"Cerro Huarucani",21,,-15.26667,-70.80944
+"Cerro Huayjuiri",8,,-14.11194,-71.05028
+"Cerro Huayllahuaylla",4,,-15.16367,-72.16089
+"Cerro Huayllatarpuna",4,,-15.25557,-72.18408
+"Cerro Huayllayoc",4,,-15.34312,-72.16476
+"Cerro Huaynacatente",8,,-14.0275,-71.13472
+"Cerro Huayracancha",12,,-11.69028,-76.19694
+"Cerro Huayta",4,,-15.32293,-72.19724
+"Cerro Huaytane",3,,-14.65969,-72.47048
+"Cerro Huayumarca",15,,-12.38778,-75.79472
+"Cerro Hueco",15,,-12.01861,-75.99778
+"Cerro Huillcayo",4,,-15.53694,-71.68444
+"Cerro Huishuillane",4,,-15.44957,-71.39064
+"Cerro Huspayaca",4,,-15.58916,-72.41057
+"Cerro Ilimin",15,,-10.62481,-76.70491
+"Cerro Ilusion",15,,-11.01139,-76.85278
+"Cerro Incacancha",12,,-11.58222,-76.24056
+"Cerro Incaperca",8,,-14.12222,-71.21472
+"Cerro Inchurana",4,,-15.40083,-71.84639
+"Cerro Inciensocucho",23,,-17.22389,-70.06389
+"Cerro Isccampu",23,,-17.25712,-69.96209
+"Cerro Jacura",8,,-14.09596,-71.09133
+"Cerro Jahsaya",4,,-15.27472,-72.72518
+"Cerro Jaico",15,,-11.97944,-76.06806
+"Cerro Jallacata",12,,-11.91011,-75.06336
+"Cerro Jallhua",4,,-15.51389,-72.44389
+"Cerro Jamajañe",4,,-15.13056,-72.63944
+"Cerro Jancocancha",15,,-11.10361,-76.53056
+"Cerro Japu Apacheta",8,,-15.27421,-71.08127
+"Cerro Jatun Rumi",4,,-15.79056,-71.81611
+"Cerro Jatun Yale",15,,-12.23056,-75.8775
+"Cerro Jatunchungara",4,,-15.37806,-71.59389
+"Cerro Jatunpila",4,,-15.47583,-71.82917
+"Cerro Jello Jello",4,,-15.71889,-71.50806
+"Cerro Jencho",4,,-15.44111,-71.92917
+"Cerro Jesjapanca",4,,-15.49992,-72.06489
+"Cerro Joire",12,,-11.74361,-76.16167
+"Cerro Jollpa",4,,-15.72444,-72.36056
+"Cerro Joma",4,,-15.30011,-72.16706
+"Cerro Jucure",23,,-17.32522,-69.68982
+"Cerro Juñopunta",4,,-15.42518,-72.05963
+"Cerro Juri",15,,-11.81306,-76.11278
+"Cerro Kerhuanta",4,,-15.30361,-71.86833
+"Cerro La Horqueta",4,,-16.19943,-71.56759
+"Cerro Lagpay",15,,-10.71889,-76.77972
+"Cerro Laramane",21,,-17.00694,-69.79972
+"Cerro Lichicocha",12,,-11.70056,-76.20722
+"Cerro Lipa",4,,-15.41,-71.93694
+"Cerro Llallahuayoc",4,,-15.60361,-72.40861
+"Cerro Llipllina",9,,-13.17528,-74.90955
+"Cerro Macara",4,,-15.23381,-71.19118
+"Cerro Magdalena",15,,-10.42639,-76.87889
+"Cerro Mamalipayoc",8,,-14.06068,-71.0221
+"Cerro Mamana",4,,-15.07639,-71.82306
+"Cerro Mamanujacha",4,,-15.41031,-72.0284
+"Cerro Mare",4,,-15.37033,-72.12468
+"Cerro Milluacocha",2,,-8.80529,-77.7348
+"Cerro Misahuana",4,,-15.54611,-72.39667
+"Cerro Mishihuajanan",15,,-10.50972,-76.86028
+"Cerro Mismi",4,,-15.48889,-71.65
+"Cerro Mito",12,,-11.53556,-76.16694
+"Cerro Mitopunta",15,,-10.4175,-76.93444
+"Cerro Mojona",4,,-15.23101,-72.21111
+"Cerro Montecocha",15,,-10.48444,-76.89694
+"Cerro Morada",12,,-11.4666,-76.2416
+"Cerro Morado",12,,-11.25071,-76.51108
+"Cerro Morococha",15,,-10.97806,-76.59056
+"Cerro Muquie",15,,-11.87972,-76.16056
+"Cerro Negro",15,,-10.42083,-76.83472
+"Cerro Ninacara",21,,-17.08111,-69.58833
+"Cerro Ninaucro",15,,-11.98778,-76.03
+"Cerro Nocarani",4,,-16.13085,-71.53874
+"Cerro Ñuño",15,,-11.78222,-76.13833
+"Cerro Orco Puñuna",8,,-14.01333,-71.19222
+"Cerro Oscollo",4,,-15.44694,-72.48972
+"Cerro Paca",15,,-11.8775,-76.09944
+"Cerro Pacchiauqui",21,,-16.81875,-70.18264
+"Cerro Paco Paco",4,,-15.09911,-71.8463
+"Cerro Pacoorcco",4,,-15.59041,-72.36037
+"Cerro Pacque",4,,-15.37583,-72.26222
+"Cerro Padreyoc",8,,-13.3775,-72.74166
+"Cerro Pajarinpauca",15,,-12.12083,-75.97361
+"Cerro Pajototoca",8,,-15.09985,-71.33076
+"Cerro Pallhuari Punta",15,,-12.48722,-75.76667
+"Cerro Palluta",23,,-17.41444,-69.815
+"Cerro Paltarumi",15,,-12.58881,-75.72277
+"Cerro Pampacancha",2,,-9.05472,-77.91917
+"Cerro Panlashuyo",12,,-11.86234,-75.10922
+"Cerro Parhuayane",4,,-15.4863,-71.86178
+"Cerro Paria",10,,-10.19389,-76.91111
+"Cerro Pariachaca",15,,-12.01667,-76
+"Cerro Pariamachay",19,,-11.0466,-76.49297
+"Cerro Pariauccro Grande",15,,-10.40583,-76.93333
+"Cerro Patanca",8,,-14.00917,-71.15222
+"Cerro Pauca",8,,-14.43894,-71.1522
+"Cerro Peña Blanca",4,,-15.39252,-72.12388
+"Cerro Pichupichu",4,,-16.48333,-71.25
+"Cerro Pincullo",15,,-12.38194,-75.62444
+"Cerro Pinta",4,,-15.01027,-72.39084
+"Cerro Piruyapunta",15,,-10.47194,-76.86667
+"Cerro Pishtac",15,,-10.54111,-76.87306
+"Cerro Piste",3,,-14.3316,-73.08124
+"Cerro Pitupaccha",8,,-13.35278,-72.39583
+"Cerro Poracota",4,,-15.24881,-72.52999
+"Cerro Puca Orcco",4,,-15.3729,-72.91427
+"Cerro Puca Rumi",12,,-11.48206,-76.34946
+"Cerro Pucaloma",8,,-14.33725,-71.08658
+"Cerro Pucapuca",4,,-15.41111,-72.97389
+"Cerro Pucara",4,,-15.41558,-71.65206
+"Cerro Pucaylla",4,,-15.52847,-72.47125
+"Cerro Pucro",15,,-10.61422,-76.86497
+"Cerro Pumarangra",15,,-12.44917,-75.74194
+"Cerro Pumaranra",4,,-15.48779,-72.50831
+"Cerro Pushca",4,,-15.35773,-72.1772
+"Cerro Putca",12,,-11.68611,-76.21389
+"Cerro Putcacocha",12,,-11.67542,-75.21446
+"Cerro Puyhuanccocha",19,,-10.46194,-76.71333
+"Cerro Quenhuaucro",15,,-10.76763,-76.70548
+"Cerro Queñuta",23,,-17.62167,-69.7525
+"Cerro Querococha",2,,-10.33589,-77.2682
+"Cerro Quicash",2,,-10.05046,-77.11453
+"Cerro Quillahuañunan",12,,-11.64333,-76.1225
+"Cerro Quinaquinani",21,,-16.6328,-70.03661
+"Cerro Quispa Yausan",8,,-14.05083,-71.0575
+"Cerro Quiviohuaganan",12,,-11.70611,-76.0175
+"Cerro Roncemina",2,,-10.34232,-77.31154
+"Cerro Ruchucay",15,,-11.49677,-76.45931
+"Cerro Sacamana",21,,-15.52474,-70.54257
+"Cerro Sahuarque",4,,-15.43431,-72.10109
+"Cerro Sallapacja",23,,-17.35116,-70.03617
+"Cerro Sallatira",4,,-15.10147,-71.53067
+"Cerro Samacasa",4,,-15.41885,-72.10557
+"Cerro San Antonio Grande",15,,-10.35722,-76.90028
+"Cerro Sani",4,,-15.23013,-72.1768
+"Cerro Santa Rosa",10,,-10.50428,-76.70547
+"Cerro Sapatagra",4,,-15.44111,-72.90722
+"Cerro Saraccoto",4,,-15.25472,-72.78694
+"Cerro Shalapucro",12,,-11.44403,-76.37765
+"Cerro Shirac",15,,-11.82,-76.20083
+"Cerro Shitapunta",15,,-12.30611,-75.87028
+"Cerro Sillane",4,,-15.53361,-71.90056
+"Cerro Sique",15,,-12.5204,-75.6115
+"Cerro Socona",4,,-15.08647,-71.7555
+"Cerro Soirococha",8,,-13.15,-73.1
+"Cerro Sojo",15,,-12.74015,-75.66196
+"Cerro Solimana",4,,-15.33119,-72.16259
+"Cerro Soncco Orcco",4,,-15.24343,-72.69442
+"Cerro Sorapata",12,,-11.94111,-74.995
+"Cerro Sorpresani",23,,-17.4036,-69.87115
+"Cerro Sucna",4,,-15.59556,-72.21
+"Cerro Sullucullahua",4,,-15.29935,-72.1883
+"Cerro Sullullumpo",4,,-15.28007,-71.24248
+"Cerro Suparaura",3,,-13.86387,-73.17681
+"Cerro Surihuiri",4,,-15.46056,-71.86806
+"Cerro Tacune",4,,-16.31349,-71.28817
+"Cerro Tapaya",4,,-15.49534,-72.19
+"Cerro Tarapo",15,,-11.48722,-76.5125
+"Cerro Teclla",4,,-15.45361,-71.77417
+"Cerro Tello",12,,-11.81579,-75.10232
+"Cerro Ticlla",4,,-15.41332,-72.20882
+"Cerro Ticllasi",4,,-15.4318,-71.81374
+"Cerro Tirane",4,,-15.33481,-72.55218
+"Cerro Tomaromani",21,,-17.18069,-69.79728
+"Cerro Toriapujro",4,,-15.48667,-72.48222
+"Cerro Torrejanca",19,,-10.45667,-76.6625
+"Cerro Trajinpunta",12,,-11.98503,-75.9595
+"Cerro Tres Cruces",15,,-11.73194,-76.41917
+"Cerro Tuctopunta",15,,-10.72972,-76.99861
+"Cerro Tucumachay",12,,-11.91691,-75.97597
+"Cerro Tuyunima",4,,-15.49917,-71.93306
+"Cerro Uchuy Yanahuara",4,,-15.60091,-72.37216
+"Cerro Uchuycucho",8,,-14.42778,-71.00917
+"Cerro Uco",12,,-11.52028,-76.25889
+"Cerro Uñapaca",9,,-13.18449,-74.93286
+"Cerro Untush",15,,-12.11944,-75.87167
+"Cerro Uysho",15,,-11.55528,-76.4675
+"Cerro Veco",23,,-17.4368,-69.68057
+"Cerro Verdecocha",2,,-9.2674,-76.85653
+"Cerro Viachayoc",8,,-14.36785,-71.04998
+"Cerro Vicuñita",12,,-11.89242,-75.95365
+"Cerro Vilacota",21,,-14.57682,-69.42378
+"Cerro Villacollo",23,,-17.37578,-69.82681
+"Cerro Yacajo",4,,-15.31417,-71.11278
+"Cerro Yaiculle",4,,-15.02899,-72.06137
+"Cerro Yana Punta",15,,-12.40222,-75.76333
+"Cerro Yanaaulla",15,,-11.57861,-76.30111
+"Cerro Yanachacca",9,,-13.39879,-74.86152
+"Cerro Yanachuco",9,,-13.16392,-74.91154
+"Cerro Yanahuachuco",12,,-11.31008,-76.42829
+"Cerro Yanahuara",4,,-15.59796,-72.39125
+"Cerro Yanajaja",4,,-15.46109,-72.18847
+"Cerro Yanapacsac",15,,-10.36417,-76.93417
+"Cerro Yanaranra",15,,-12.44389,-75.65806
+"Cerro Yanarrajo",2,,-9.03722,-77.58778
+"Cerro Yanauma",21,,-14.6271,-69.32305
+"Cerro Yanayana",15,,-11.71855,-76.32938
+"Cerro Yancca",4,,-15.67944,-72.37333
+"Cerro Yanque",12,,-11.27275,-76.45726
+"Cerro Yauray",15,,-12.62438,-75.51938
+"Cerro Yauric",15,,-11.88083,-76.20583
+"Cerro Yuaytacondorsenja",4,,-15.37068,-72.19283
+"Cerro Yucamane Chico",23,,-17.14188,-70.20756
+"Cerro Yuraccasa",4,,-15.44889,-72.16241
+"Cerro Yuraccocha",12,,-11.5325,-76.23694
+"Cerro Yurajanca",15,,-11.76917,-76.17667
+"Cerro Zuripujo",23,,-17.03889,-70.34833
+"Cerros Auquichani",15,,-11.33806,-76.56167
+"Cerros Catarahui",19,,-10.78149,-76.56689
+"Cerros Condorhuachana",8,,-13.56667,-72.35
+"Cerros Cuchpanga",19,,-10.76111,-76.60111
+"Cerros Faculla",4,,-15.26167,-72.54472
+"Cerros Huaychahuaque",4,,-15.30056,-72.54917
+"Cerros Huilcane",4,,-15.22972,-72.24741
+"Cerros Lulicocha",15,,-10.6897,-76.6602
+"Cerros Maichique",4,,-15.03276,-72.44115
+"Cerros Purupuruni",23,,-17.306,-69.91358
+Chachapoyas,1,,-6.20181,-77.85606
+"Chachapoyas Province",1,,-6.2748,-77.81067
+Chancay,15,,-11.57997,-77.2702
+Chanchamayo,12,,-11.05,-75.31667
+Chanchara,9,,-13.02453,-74.2686
+Chaupimarca,19,,-10.40696,-76.46168
+"Chavín culture",2,,-9.57908,-77.17758
+Chepén,13,,-7.22436,-79.42476
+"Chepén Province",13,,-7.14367,-79.45674
+Chiclayo,14,,-6.77137,-79.84088
+"Chiclayo International Airport",14,,-6.78633,-79.82786
+"Chiclayo Province",14,,-6.80495,-79.5501
+Chimbote,2,,-9.15032,-78.52366
+"Chincha Alta",11,,-13.40985,-76.13235
+Chincheros,3,,-13.47005,-73.67162
+Chiquián,2,,-10.15038,-77.1563
+Choquequirao,8,,-13.38333,-72.88333
+Chosica,15,,-11.94306,-76.70944
+"Chota Province",6,,-6.38332,-79.18055
+"Chucuito Province",21,,-16.60545,-69.35761
+Chulucanas,20,,-5.0925,-80.1625
+"Chumbivilcas Province",8,,-14.439,-71.99362
+"Chupaca Province",12,,-12.3,-75.433
+"Churcampa Province",9,,-12.6,-74.52
+"Ciudad Satelite",4,,-16.43085,-71.52921
+Concepción,12,,-11.91762,-75.31401
+"Concepción Province",12,,-11.75,-75.11645
+"Condesuyos Province",4,,-15.66948,-72.85726
+"Condorcanqui Province",1,,-4.16515,-78.0384
+"Contumazá Province",6,,-7.37587,-78.96559
+"Cooperativa Agraria de Producción Pasamayo",15,,-11.60067,-77.21695
+Copa,2,,-9.27037,-77.48262
+"Cordillera Azul National Park",16,,-7.75,-75.94
+"Cordillera Llongote",15,,-12.3325,-75.94944
+"Cordillera Mariash",2,,-10.06785,-77.07244
+"Cordillera Puagjancha",15,,-11.19059,-76.49259
+"Cordillera Vilcanota",8,,-13.76667,-71.3
+"Coronel FAP Alfredo Mendívil Duarte Airport",5,,-13.15482,-74.20442
+"Coronel FAP Francisco Secada Vignetta International Airport",16,,-3.78474,-73.30881
+"Corongo Province",2,,-8.57483,-77.88264
+"Cotabambas Province",3,,-14.02393,-72.22393
+"Cuello de Soray",8,,-13.35,-72.55
+Cusco,8,,-13.52264,-71.96734
+"Cusco Airport",8,,-13.53572,-71.93878
+"Cusco Province",8,,-13.52951,-71.97049
+"Cutervo Province",6,,-6.20714,-78.82022
+"Cuzco Department",8,,-13,-72.25
+"Daniel Alcides Carrión Province",19,,-10.5,-76.47448
+"Datem del Marañón Province",16,,-4.13614,-76.97788
+"Dique Ancasccocha",5,,-14.92312,-73.83937
+"El Collao Province",21,,-16.72641,-69.75515
+"El Dorado Province",22,,-6.56298,-76.7413
+"El Olivo",11,,-13.22861,-76.15419
+"Espinar Province",8,,-14.82976,-71.39433
+"FAP Captain David Abenzur Rengifo International Airport",25,,-8.37794,-74.5743
+Ferreñafe,14,,-6.63889,-79.78889
+"Ferreñafe Province",14,,-6.32908,-79.46171
+"Francisco Carle Airport",12,,-11.7831,-75.4734
+Gallinazos,15,,-11.88552,-77.06058
+"General Sánchez Cerro Province",18,,-16.41593,-70.76727
+"Gran Chimú Province",13,,-7.57976,-78.64718
+"Grau Province",3,,-14.04786,-72.61683
+Guadalupe,13,,-7.25,-79.48333
+Huacaybamba,10,,-8.9948,-76.81027
+Huacho,15,,-11.10667,-77.605
+"Hualgayoc Province",6,,-6.68,-78.53
+"Huallaga Airport",22,,-7.06056,-76.5822
+"Huallaga Province",22,,-6.75664,-76.90143
+"Huamalíes Province",10,,-9.37124,-76.57444
+"Huamanga Province",5,,-13.23829,-74.20214
+"Huanca Sancos Province",5,,-14.076,-74.428
+"Huancabamba Province",20,,-5.4681,-79.51314
+"Huancané Province",21,,-15.1522,-69.62123
+Huancavelica,9,,-12.78261,-74.97266
+"Huancavelica Province",9,,-12.72091,-75.0841
+Huancayo,12,,-12.06513,-75.20486
+"Huancayo Province",12,,-12.17319,-75.16169
+Huanta,5,,-12.93333,-74.25
+"Huanta Province",5,,-12.5351,-74.16667
+Huantsán,2,,-9.51882,-77.31277
+Huánuco,10,,-9.93062,-76.24223
+"Huanuco Airport",10,,-9.87881,-76.2048
+"Huánuco Department",10,,-9.5,-76
+"Huánuco Province",10,,-9.76717,-76.22052
+Huaral,15,,-11.495,-77.20778
+"Huaral Province",15,,-11.25,-76.91667
+Huaraz,2,,-9.52779,-77.52778
+"Huaraz Province",2,,-9.56109,-77.64605
+"Huari Province",2,,-9.43117,-77.10711
+Huarmey,2,,-10.06806,-78.15222
+"Huarmey Province",2,,-10.07832,-77.93619
+"Huarochirí Province",15,,-11.93421,-76.42305
+Huascarán,2,,-9.12208,-77.60477
+"Huascaran National Park",2,,-9.36362,-77.42426
+"Huascarán Norte",2,,-9.10233,-77.61898
+"Huaura Province",15,,-11.03363,-77.23795
+"Huaylas Province",2,,-8.939,-77.81951
+"Huaytará Province",9,,-13.65616,-75.09234
+"Iberia Airport",17,,-11.4116,-69.4887
+Ica,11,,-14.3325,-75.49972
+"Ica Province",11,,-14.27799,-75.6579
+Ilo,18,,-17.63185,-71.34108
+"Ilo Province",18,,-17.58377,-71.2127
+"Inca Manco Cápac International Airport",21,,-15.4671,-70.15817
+Iquitos,16,,-3.74912,-73.25383
+"Isla Sangayán",11,,-13.83849,-76.44902
+"Islas de Chincha",11,,-13.63514,-76.39772
+"Islay Province",4,,-16.96141,-71.72446
+Jaén,6,,-5.70729,-78.80785
+"Jaén Province",6,,-5.71074,-79.00438
+"Jaén Shumba Airport",6,,-5.59531,-78.773
+"Jauja Province",12,,-11.726,-75.547
+"Jorge Basadre Province",23,,-17.57919,-70.73083
+"Jorge Chávez International Airport",7,,-12.02189,-77.11432
+"Juan Simons Vela Airport",22,,-6.06786,-77.15998
+Juanjuí,22,,-7.17697,-76.72774
+"Juanjuí Airport",22,,-7.1691,-76.72856
+"Julcán Province",13,,-8.17238,-78.46356
+Juliaca,21,,-15.5,-70.13333
+Junín,12,,-11.15895,-75.99304
+"Junín Province",12,,-11.02112,-75.93779
+"La Convención Province",8,,-12.34457,-72.90429
+"La Libertad",13,,-8,-78.5
+"La Mar Province",5,,-13.03312,-73.70571
+"La Oroya",12,,-11.51893,-75.89935
+"La Peca",1,,-5.61111,-78.435
+"La Rinconada",21,,-14.63126,-69.44638
+"La Unión Province",4,,-15.05583,-72.79345
+"Lago Alcacocha",19,,-10.59172,-76.32317
+"Lago Sachavacayoc",17,,-12.89548,-69.36055
+"Lago Valencia",17,,-12.43616,-68.81973
+"Lago Yauricocha",12,,-11.95,-75.91667
+"Laguna Acucocha",19,,-10.775,-76.53917
+"Laguna Almilla",4,,-15.10734,-72.00196
+"Laguna Amayuni",8,,-13.81497,-70.99405
+"Laguna Aricota",23,,-17.35616,-70.2839
+"Laguna Carhuacocha",10,,-10.24472,-76.86556
+"Laguna Ccaraccocha",9,,-13.36366,-75.09037
+"Laguna Chauya",25,,-8.9634,-74.25641
+"Laguna Chinancocha",10,,-10.0445,-76.4072
+"Laguna Choclococha",9,,-13.20365,-75.07691
+"Laguna Conococha",2,,-10.12792,-77.28046
+"Laguna de Parinacochas",5,,-15.29246,-73.69797
+"Laguna Huascacocha",19,,-11.0895,-76.41123
+"Laguna Imiria",25,,-8.86417,-74.3025
+"Laguna Lagunillas",21,,-15.72432,-70.74291
+"Laguna Langui Layo",8,,-14.47611,-71.22389
+"Laguna Lauricocha",10,,-10.31319,-76.69626
+"Laguna Loriscota",21,,-16.86918,-70.03722
+"Laguna Marcapomacocha",12,,-11.40205,-76.3465
+"Laguna Naticocha",19,,-11.02969,-76.42823
+"Laguna Paca",12,,-11.72798,-75.50795
+"Laguna Pacchalla",9,,-13.4,-75.1
+"Laguna Pacucha",3,,-13.61145,-73.31899
+"Laguna Parcco",5,,-14.65155,-73.69446
+"Laguna Patarcocha",10,,-10.3904,-76.75999
+"Laguna Pías",13,,-7.90472,-77.55139
+"Laguna Pocchaya",9,,-13.43717,-75.094
+"Laguna Pomacanchi",8,,-14.00194,-71.54444
+"Laguna Punrún",19,,-10.84366,-76.49149
+"Laguna Rimachuima",16,,-4.41956,-76.70046
+"Laguna Sauce",22,,-6.70611,-76.21778
+"Laguna Sausacocha",13,,-7.795,-77.99
+"Laguna Sibinacocha",8,,-13.85139,-71.02944
+"Laguna Singrenacocha",8,,-13.66,-71.15944
+"Laguna Soracocha",21,,-14.51446,-69.61182
+"Laguna Suches",23,,-16.92792,-70.39456
+"Laguna Suytuccocha",3,,-13.82599,-73.27463
+"Laguna Tiranipampa",5,,-13.83333,-74.16667
+"Laguna Ucumarini",18,,-16.38625,-70.40347
+"Laguna Vilacota",23,,-17.13972,-70.03639
+"Laguna Vilafro",4,,-15.20389,-71.87972
+"Lake Junín",12,,-11.01523,-76.10749
+"Lamas Province",22,,-6.2206,-76.45822
+Lambayeque,14,,-6.70111,-79.90611
+"Lambayeque Province",14,,-6.18756,-79.97486
+"Lampa Province",21,,-15.39462,-70.62606
+"Las Malvinas/Echarate Airport",8,,-11.8547,-72.9397
+"Lauricocha Province",10,,-10.20055,-76.70359
+"Leoncio Prado Province",10,,-9.14859,-76
+"Lieutenant General Gerardo Pérez Pinedo Airport",25,,-10.72912,-73.7665
+Lima,15,,-12.0179,-76.90432
+"Lima region",15,,-11.85,-76.45
+Loreto,16,,-4,-74.5
+"Loreto Province",16,,-4.05956,-75.14965
+"Lucanas Province",5,,-14.61805,-74.35567
+"Luya Province",1,,-6.34222,-78.06806
+"Machu Picchu",8,,-13.16357,-72.54574
+Machupicchu,8,,-13.15549,-72.52416
+"Madre de Dios",17,,-12,-70.25
+"Manú National Park",17,,-12.04201,-71.78741
+"Manú Province",17,,-12.26595,-71.29033
+"Manuel Prado Airport",12,,-11.32643,-74.5352
+"Marañón Province",10,,-8.71916,-76.68794
+"Maria Reiche Neuman Airport",11,,-14.854,-74.9615
+"Mariscal Cáceres Province",22,,-7.2739,-77.18216
+"Mariscal Luzuriaga Province",2,,-8.86949,-77.27552
+"Mariscal Nieto Province",18,,-17.02573,-70.80488
+"Mariscal Ramón Castilla Province",16,,-3.92682,-71.70057
+"Maynas Province",16,,-2.87238,-73.97295
+"Megantoni National Sanctuary",8,,-12.26088,-72.28375
+"Melgar Province",21,,-14.67558,-70.70322
+Misti,4,,-16.29712,-71.41075
+Moho,21,,-15.33508,-69.3803
+"Moisés Benzaquén Rengifo Airport",16,,-5.89377,-76.11821
+Mollendo,4,,-17.02306,-72.01472
+Monsefú,14,,-6.87431,-79.86871
+Moquegua,18,,-17.19832,-70.93567
+"Moquegua Department",18,,-16.83662,-70.91992
+"Morropón Province",20,,-5.2383,-80.00638
+Moyobamba,22,,-6.03416,-76.97168
+"Moyobamba Airport",22,,-6.01889,-76.98833
+"Moyobamba Province",22,,-5.90527,-76.99051
+"Nasca Province",11,,-14.95533,-75.09131
+Nazca,11,,-14.83098,-74.93895
+"Nevado Achacollo",23,,-17.53265,-69.8589
+"Nevado Alcay",12,,-11.29729,-76.47365
+"Nevado Amparay",8,,-13.38333,-72.66667
+"Nevado Ampato",4,,-15.82167,-71.87944
+"Nevado Ampay",3,,-13.55776,-72.93092
+"Nevado Ananta",4,,-15.83972,-71.665
+"Nevado Ancovilca",15,,-12.17972,-75.87889
+"Nevado Antarazo",9,,-12.93345,-75.12964
+"Nevado Anticona",12,,-11.58639,-76.1875
+"Nevado Auquitaipe",23,,-17.48278,-69.84222
+"Nevado Auxilio",15,,-10.30556,-76.96528
+"Nevado Auzangate",8,,-13.78828,-71.22866
+"Nevado Azulcocha",8,,-13.22278,-73.115
+"Nevado Barroso",23,,-17.55528,-69.87056
+"Nevado Bonanta",8,,-13.1725,-72.40083
+"Nevado Calcha",4,,-15.92351,-71.44324
+"Nevado Callas",12,,-11.48965,-76.25209
+"Nevado Cancave",23,,-17.02263,-70.14272
+"Nevado Capacsaya",8,,-13.18889,-72.11167
+"Nevado Caramarca Chico",15,,-10.32639,-76.92806
+"Nevado Carnicero",10,,-10.30861,-76.88139
+"Nevado Cashpe",15,,-11.51,-76.36667
+"Nevado Ccarhuaraso",5,,-14.33174,-73.76334
+"Nevado Cercacerca",21,,-16.54464,-70.18141
+"Nevado Chachani",4,,-16.19498,-71.53156
+"Nevado Chequiarajo",2,,-9.17194,-77.55806
+"Nevado Chicon",8,,-13.23111,-72.0575
+"Nevado Choquetacarpo",8,,-13.25,-72.88333
+"Nevado Choquezafra",8,,-13.22611,-73.21361
+"Nevado Chuquiananta",23,,-17.08302,-70.46048
+"Nevado Citac",9,,-12.80201,-75.23563
+"Nevado Cochas",12,,-11.92397,-75.02701
+"Nevado Coisopacana",8,,-13.33333,-73.05
+"Nevado Condorcota",8,,-14.35944,-71.02694
+"Nevado Coropuna",4,,-15.54699,-72.66156
+"Nevado Cullec",12,,-11.90344,-75.89861
+"Nevado Culluncuya",4,,-15.45278,-71.80944
+"Nevado Cunurana",21,,-14.54809,-70.8319
+"Nevado Cuyoc",15,,-10.37889,-76.87417
+"Nevado de Tuco",2,,-9.86667,-77.2
+"Nevado Diablo Mudo",2,,-10.2986,-76.98195
+"Nevado El Fraile",23,,-17.63861,-69.79778
+"Nevado Esquina",8,,-13.255,-72.36806
+"Nevado Firura",4,,-15.23608,-72.64069
+"Nevado Halancoma",8,,-13.18417,-72.2525
+"Nevado Huacrish",2,,-10.29806,-76.96311
+"Nevado Huacshah",15,,-10.40615,-76.93578
+"Nevado Huaguruncho",19,,-10.53106,-75.93135
+"Nevado Huajayhuillca",8,,-13.16417,-72.37
+"Nevado Huajrahuire",4,,-14.975,-72.20694
+"Nevado Hualahuantay",8,,-14.37315,-71.0156
+"Nevado Hualca Hualca",4,,-15.7202,-71.8606
+"Nevado Hualcán",2,,-9.20306,-77.51833
+"Nevado Huamalla",15,,-12.26083,-75.92361
+"Nevado Huancarcocha",15,,-12.58486,-75.79078
+"Nevado Huancune",23,,-17.59519,-69.78926
+"Nevado Huarancante",4,,-15.73333,-71.52278
+"Nevado Huayanay",8,,-13.29083,-72.39972
+"Nevado Huayquera",21,,-15.34774,-70.70896
+"Nevado Huaytapallana",12,,-11.90817,-75.05404
+"Nevado Huayunca",3,,-14.61604,-72.50201
+"Nevado Huerta Pata",21,,-14.24177,-69.78139
+"Nevado Humantay",8,,-13.36667,-72.6
+"Nevado Iñuma",23,,-17.46089,-69.83915
+"Nevado Iscailarjanco",21,,-17.00717,-70.09974
+"Nevado Jahui",15,,-10.85139,-76.58667
+"Nevado Jaico",12,,-11.80196,-76.04407
+"Nevado Jalahuana",21,,-14.32583,-69.73472
+"Nevado Jatun Sallica",8,,-14.12383,-70.80622
+"Nevado Jatunpauca",15,,-12.14583,-75.95167
+"Nevado Jirishanca",10,,-10.23716,-76.90525
+"Nevado Jirishanca Chico",10,,-10.22972,-76.89175
+"Nevado Jitpa",12,,-11.37616,-76.41917
+"Nevado Jullutahuarco",15,,-10.32583,-76.97444
+"Nevado Jurau",10,,-10.325,-76.87361
+"Nevado la Chonta",12,,-11.49787,-76.37667
+"Nevado la Fila",15,,-11.47665,-76.44373
+"Nevado Lalaccotuna",12,,-11.89806,-74.85
+"Nevado Lazo Tumi",12,,-11.94361,-74.82694
+"Nevado Lazopata",12,,-11.70583,-74.875
+"Nevado León Huaccanan",10,,-10.40639,-76.80528
+"Nevado Lloccesa",21,,-14.14778,-70.57472
+"Nevado Marconi",8,,-13.15833,-72.35139
+"Nevado Mishipañahuin",12,,-11.35852,-76.32182
+"Nevado Mismi",4,,-15.52528,-71.69083
+"Nevado Moyoc",8,,-13.35417,-72.36111
+"Nevado Ñausacocha",19,,-10.48028,-75.9425
+"Nevado Ninashanca",10,,-10.21333,-76.91417
+"Nevado Norma",12,,-11.92651,-76.05548
+"Nevado Ocobamba",8,,-13.34389,-72.43917
+"Nevado Ojocata",12,,-11.86528,-76.02556
+"Nevado Ouepala Punta",15,,-12.30167,-75.91528
+"Nevado Padrecaca",15,,-12.23444,-75.93278
+"Nevado Panchacoto",15,,-11.91028,-76.05444
+"Nevado Panta",8,,-13.245,-73.09
+"Nevado Pitita",12,,-11.44033,-74.98472
+"Nevado Poroquingua",2,,-9.14861,-77.52194
+"Nevado Pucacocha",12,,-11.55389,-76.2275
+"Nevado Pugosh",12,,-11.51111,-76.11611
+"Nevado Puihuan",12,,-11.85598,-75.0446
+"Nevado Pumahuanja",8,,-13.18806,-72.13778
+"Nevado Puscanturpo",15,,-10.36694,-76.86389
+"Nevado Putaca",2,,-9.0025,-77.71333
+"Nevado Putca",12,,-11.82944,-76.04639
+"Nevado Putcacocha",12,,-11.87123,-75.07386
+"Nevado Puypuy",12,,-11.53056,-76.10972
+"Nevado Quehuisha",4,,-15.52611,-71.75944
+"Nevado Quesillojanca",10,,-10.41889,-76.8
+"Nevado Quillca",8,,-14.36667,-71.01222
+"Nevado Rajo Cutac",2,,-10.00849,-77.17582
+"Nevado Rasac",10,,-10.27528,-76.92083
+"Nevado Riticocha",8,,-13.76642,-70.57602
+"Nevado Rondoy",10,,-10.22528,-76.91611
+"Nevado Sacsarayoc",8,,-13.23583,-72.81889
+"Nevado Salcantay",8,,-13.69959,-71.09438
+"Nevado Sapojahuana",4,,-15.1675,-72.68361
+"Nevado Sara Sara",5,,-15.32592,-73.44295
+"Nevado Sarapo",10,,-10.30417,-76.89472
+"Nevado Sepregina",4,,-15.5275,-71.91722
+"Nevado Shahuac",12,,-11.56194,-76.16583
+"Nevado Sirihuani",8,,-13.19917,-72.04472
+"Nevado Siula Grande",10,,-10.29444,-76.89111
+"Nevado Solimana",4,,-15.41,-72.89361
+"Nevado Suerococha",2,,-10.28611,-76.97611
+"Nevado Suiricocha",15,,-11.9475,-76.05333
+"Nevado Terijuay",8,,-13.0009,-72.22045
+"Nevado Ticaco",23,,-17.35083,-70.04333
+"Nevado Ticlla",15,,-12.25917,-75.95861
+"Nevado Toro",15,,-12.60657,-75.76559
+"Nevado Toroyoc",15,,-12.41972,-75.665
+"Nevado Trapecio",10,,-10.33778,-76.86917
+"Nevado Tsacra Chico",2,,-10.27926,-76.93799
+"Nevado Tunshu",12,,-11.8931,-75.98377
+"Nevado Tutallipina",8,,-14.04194,-70.85333
+"Nevado Ulta",2,,-9.15778,-77.52889
+"Nevado Umán",15,,-12.17694,-75.91611
+"Nevado Upianca",15,,-12.54475,-75.78596
+"Nevado Utcohuarco",12,,-11.735,-74.94889
+"Nevado Verónica",8,,-13.16417,-72.32611
+"Nevado Yahuina",2,,-9.22333,-77.51639
+"Nevado Yanapaccha",2,,-9.02028,-77.58417
+"Nevado Yanashinga",12,,-11.57639,-76.1725
+"Nevado Yanaulo",12,,-11.91278,-74.82028
+"Nevado Yantauri",10,,-10.32028,-76.89556
+"Nevado Yantayo",12,,-11.83194,-76.06306
+"Nevado Yerupajá Chico",10,,-10.25222,-76.90278
+"Nevado Yuraccocha",12,,-11.57167,-76.21444
+"Nevados Acospalca",15,,-12.22417,-75.99111
+"Nevados Altarniyoc",15,,-12.21528,-75.93639
+"Nevados Casiri",23,,-17.47075,-69.80087
+"Nevados Chopicallqui",2,,-9.08764,-77.57364
+"Nevados de Coalaque",18,,-16.5,-70.95
+"Nevados Otoshmicunan",15,,-11.88083,-76.26528
+"Nevados Paljay",8,,-13.32,-72.49778
+"Nudo de Quenamari",21,,-14.15,-70.38333
+Ocros,2,,-10.48906,-77.4295
+Ollantaytambo,8,,-13.25722,-72.26306
+"Otuzco Province",13,,-7.90457,-78.56362
+"Oxapampa Province",19,,-10.29505,-74.94933
+"Oyón Province",15,,-10.75869,-76.87634
+Pacasmayo,13,,-7.40056,-79.57139
+"Pacasmayo Province",13,,-7.42654,-79.44151
+Pachacamac,15,,-12.22559,-76.85755
+"Pachitea Province",10,,-9.95262,-75.8139
+"Padre Abad",25,,-8.7968,-75.4285
+Paita,20,,-5.08917,-81.11444
+"Paita Province",20,,-5.10189,-81.09695
+"Pallasca Province",2,,-8.31738,-77.90497
+"Palpa Province",11,,-14.37519,-75.17624
+"Paracas National Reserve",11,,-13.86141,-76.31653
+Paramonga,15,,-10.66667,-77.83333
+"Parinacochas Province",5,,-15.02965,-73.63487
+"Parque Nacional Cerros de Amotape",20,,-4.14064,-80.58721
+"Paruro Province",8,,-13.89274,-71.91348
+Pasco,19,,-10.5,-75.25
+"Pasco Province",19,,-10.7225,-76.11364
+Patallacta,8,,-13.23139,-72.43139
+"Pataz Province",13,,-8.20959,-77.32908
+Pativilca,15,,-10.7,-77.78333
+"Paucar del Sara Sara Province",5,,-15.12275,-73.26177
+"Paucartambo Province",8,,-13.15071,-71.51398
+Picota,22,,-6.90221,-76.25573
+Pisco,2,,-9.00972,-77.6325
+"Pisco Province",11,,-13.80377,-75.94264
+Piura,20,,-5,-80.33333
+"Piura International Airport",20,,-5.20575,-80.61644
+"Piura Province",20,,-5.21416,-80.40617
+"Pomabamba Province",2,,-8.82311,-77.47559
+"Provincia de Castrovirreyna",9,,-13.14535,-75.40598
+"Provincia de Chincha",11,,-13.31791,-75.9393
+"Provincia de Contralmirante Villar",24,,-3.98298,-80.72448
+"Provincia de Coronel Portillo",25,,-8.70238,-73.9459
+"Provincia de Dos de Mayo",10,,-9.64548,-76.70959
+"Provincia de Santa",2,,-8.95746,-78.27765
+"Provincia de Santiago de Chuco",13,,-8.16636,-78.15429
+"Provincia de Tacna",23,,-17.97804,-70.25882
+"Provincia de Talara",20,,-4.46346,-81.08759
+"Provincia de Trujillo",13,,-8.07004,-78.90444
+"Provincia de Tumbes",24,,-3.79254,-80.43368
+"Provincia de Yauyos",15,,-12.50281,-75.9011
+"Provincia de Zarumilla",24,,-3.68262,-80.24681
+Pucallpa,25,,-8.37915,-74.55387
+"Pueblo Viejo Altos de Pacayura",4,,-16.01117,-72.6847
+"Puerto Inca Province",10,,-9.36696,-75.08958
+"Puerto Maldonado",17,,-12.61361,-69.22861
+"Puerto Yanama",8,,-13.33333,-72.78333
+Puno,21,,-15,-70
+"Puno Province",21,,-16.13092,-70.08682
+Puquio,5,,-14.7,-74.13333
+"Purús District",25,,-10.37331,-71.58231
+"Putumayo Province",16,,-2.45046,-72.66729
+"Quince Air Base",8,,-13.2333,-70.7533
+"Quispicanchi Province",8,,-13.56821,-70.98883
+"Recuay Province",2,,-9.95959,-77.42517
+"Requena Province",16,,-5.96597,-73.94121
+"Rio Abiseo National Park",22,,-7.68151,-77.28661
+Rioja,22,,-6.05675,-77.16651
+"Rioja Province",22,,-5.87344,-77.46771
+"Rodríguez Ballón International Airport",4,,-16.34361,-71.56863
+"Rodríguez de Mendoza Province",1,,-6.36524,-77.44751
+"Salinas and Aguada Blanca National Reservation",4,,-16.1021,-71.219
+"San Antonio de Putina Province",21,,-14.71175,-69.61559
+"San Francisco De Borja",15,,-12.08911,-76.99876
+"San Ignacio Province",6,,-5.19925,-78.96065
+"San Isidro",15,,-12.09655,-77.04258
+"San Juan",16,,-3.77611,-73.28139
+"San Juan Airport",11,,-15.35906,-75.13464
+"San Juan de Marcona",11,,-15.36528,-75.16222
+"San Marcos Province",6,,-7.28278,-78.06054
+"San Martin",20,,-5.18591,-80.66927
+"San Martín Department",22,,-7,-76.83333
+"San Martín Province",22,,-6.59184,-75.77956
+"San Miguel Province",6,,-6.97979,-78.98192
+"San Nicolas Airport",1,,-6.39231,-77.5012
+"San Pablo Province",6,,-7.0751,-78.74922
+"San Pedro de Lloc",13,,-7.4289,-79.50416
+"San Ramón",12,,-11.12417,-75.35733
+"San Román Province",21,,-15.70792,-70.43109
+"San Vicente de Cañete",15,,-13.07556,-76.38528
+Saña,14,,-6.91888,-79.582
+"Sánchez Carrión Province",13,,-7.78538,-77.92586
+"Sandia Province",21,,-13.8429,-69.32376
+"Santa Ana",8,,-12.86667,-72.71667
+"Santa Anita - Los Ficus",15,,-12.05048,-76.97335
+"Santa Cruz",2,,-8.89429,-77.7083
+"Santa Cruz Province",6,,-6.68125,-78.97767
+"Santa María",15,,-12.00538,-76.89329
+"Santa Maria Airport",15,,-12.39148,-76.75579
+"Santiago de Surco",15,,-12.13588,-77.00742
+"Santuario Nacional Manglares de Tumbes",24,,-3.5,-80.48333
+"Saposoa Airport",22,,-6.96003,-76.7684
+Satipo,12,,-11.25222,-74.63861
+"Satipo Province",12,,-11.567,-74.09367
+Sayán,15,,-11.13333,-77.1946
+Sechura,20,,-5.87051,-80.67181
+Sicuani,8,,-14.26944,-71.22611
+"Sihuas Province",2,,-8.48298,-77.567
+"Sucre Province",5,,-14.103,-73.786
+Sullana,20,,-4.90389,-80.68528
+"Sullana Province",20,,-4.57657,-80.63051
+"Tabaconas Namballe National Sanctuary",6,,-5.157,-79.273
+Tacna,23,,-17.66667,-70.33333
+"Tacna International Airport",23,,-18.05306,-70.27556
+"Tahuamanu Province",17,,-11.23086,-70.25752
+Talara,20,,-4.57722,-81.27194
+"Talara Airport",20,,-4.57664,-81.25414
+"Tambopata-Candamo Nature Reserve",17,,-12.9,-69.33333
+"Tambopata District",17,,-12.04945,-70.28279
+"Tambopata National Reserve",17,,-12.90686,-69.41986
+"Tambopata Province",17,,-12.19948,-70.05006
+Taquile,21,,-15.76667,-69.68333
+Tarapoto,22,,-6.50874,-76.37325
+"Tarata Province",23,,-17.40978,-69.98273
+Tarma,12,,-11.41899,-75.68992
+"Tarma Province",12,,-11.40562,-75.69129
+"Tayacaja Province",9,,-12.24202,-74.76755
+"Tingo María",10,,-9.29532,-75.99574
+"Tingo María Airport",10,,-9.28708,-76.00477
+"Tingo Maria National Park",10,,-9.36769,-75.99844
+Tinyahuarco,19,,-10.76771,-76.27523
+Tocache,22,,-8.2493,-76.63451
+"Trompeteros Airport",16,,-3.80611,-75.04023
+Trujillo,13,,-8.11599,-79.02998
+"Trujillo International Airport",13,,-8.08141,-79.10876
+Tumbes,24,,-3.83333,-80.5
+"Tumbes Airport",24,,-3.55253,-80.38136
+Ucayali,25,,-9.75,-73.5
+"Ucayali Province",16,,-7.30705,-75.37762
+"Uchiza Airport",22,,-8.47373,-76.46047
+"Urubamba Province",8,,-13.24043,-72.25995
+"Utcubamba Province",1,,-5.77031,-78.3285
+"Víctor Fajardo Province",5,,-13.70852,-74.24719
+"Vilcas Huamán Province",5,,-13.632,-73.888
+Vinicunca,8,,-13.87433,-71.30045
+Virú,13,,-8.41554,-78.75201
+"Virú Province",13,,-8.52199,-78.60355
+"Volcán Ticsani",18,,-16.76587,-70.60189
+"Volcán Tutupaca",23,,-17.02556,-70.37222
+"Volcán Ubinas",18,,-16.355,-70.90305
+"Volcán Yucamane",23,,-17.1825,-70.19889
+Yanacancha,10,,-10.24111,-76.64556
+"Yarowilca Province",10,,-9.80263,-76.59516
+"Yauli Province",12,,-11.52788,-76.09648
+Yauri,8,,-14.79083,-71.40986
+Yerupajá,10,,-10.26889,-76.905
+"Yungay Province",2,,-9.189,-77.73298
+Yunguyo,21,,-16.25,-69.08333
+Yurimaguas,16,,-5.90181,-76.12234

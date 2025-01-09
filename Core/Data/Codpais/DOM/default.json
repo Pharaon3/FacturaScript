@@ -1,0 +1,20 @@
+{
+  "default": {
+    "coddivisa": "DOP",
+    "codimpuesto": "ITBIS18",
+    "codserie": "A",
+    "codpago": "CONT",
+    "currency_position": "left",
+    "decimal_separator": ".",
+    "thousands_separator": ",",
+    "tipoidfiscal": "RNC",
+    "updatesupplierprices": true,
+    "validate_iban": false
+  },
+  "email": {
+    "enc": "ssl",
+    "host": "smtp.gmail.com",
+    "mailer": "smtp",
+    "port": "465"
+  }
+}

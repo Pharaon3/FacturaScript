@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : proveedores.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the proveedores table.
+-->
+<table>
+    <column>
+        <name>acreedor</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <column>
+        <name>cifnif</name>
+        <type>character varying(30)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codcliente</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codimpuestoportes</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codpago</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codproveedor</name>
+        <type>character varying(10)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codretencion</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codserie</name>
+        <type>character varying(4)</type>
+    </column>
+    <column>
+        <name>codsubcuenta</name>
+        <type>character varying(15)</type>
+    </column>
+    <column>
+        <name>debaja</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <column>
+        <name>email</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>fax</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>fechaalta</name>
+        <type>date</type>
+    </column>
+    <column>
+        <name>fechabaja</name>
+        <type>date</type>
+    </column>
+    <column>
+        <name>idcontacto</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>langcode</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>nombre</name>
+        <type>character varying(100)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>observaciones</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>personafisica</name>
+        <type>boolean</type>
+        <default>true</default>
+    </column>
+    <column>
+        <name>razonsocial</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>regimeniva</name>
+        <type>character varying(20)</type>
+    </column>
+    <column>
+        <name>telefono1</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>telefono2</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>tipoidfiscal</name>
+        <type>character varying(25)</type>
+    </column>
+    <column>
+        <name>web</name>
+        <type>character varying(100)</type>
+    </column>
+    <constraint>
+        <name>proveedores_pkey</name>
+        <type>PRIMARY KEY (codproveedor)</type>
+    </constraint>
+    <constraint>
+        <name>ca_proveedores_formaspago</name>
+        <type>FOREIGN KEY (codpago) REFERENCES formaspago (codpago) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_proveedores_retenciones</name>
+        <type>FOREIGN KEY (codretencion) REFERENCES retenciones (codretencion) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_proveedores_series</name>
+        <type>FOREIGN KEY (codserie) REFERENCES series (codserie) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2023 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Artex Trading sa             <jferrer@artextrading.com>
+ * @author Fco. Antonio Moreno Pérez    <famphuelva@gmail.com>
+ * @author Carlos García Gómez          <carlos@facturascripts.com>
+-->
+<view>
+    <columns>
+        <group name="primary-data" numcolumns="12">
+            <column name="subaccount" description="account-dot-code" numcolumns="3" order="100">
+                <widget type="text" fieldname="codsubcuenta" icon="fa-solid fa-hashtag" maxlength="15" readonly="dinamic"
+                        required="true"/>
+            </column>
+            <column name="description" numcolumns="6" order="110">
+                <widget type="text" fieldname="descripcion" maxlength="255" required="true"/>
+            </column>
+            <column name="fiscal-exercise" numcolumns="3" order="120">
+                <widget type="select" fieldname="codejercicio" onclick="EditEjercicio" readonly="dinamic"
+                        required="true">
+                    <values source="ejercicios" fieldcode="codejercicio" fieldtitle="nombre"/>
+                </widget>
+            </column>
+        </group>
+        <group name="secondary-data" numcolumns="12">
+            <column name="account" order="100">
+                <widget type="select" fieldname="idcuenta" onclick="EditCuenta" parent="codejercicio" required="true">
+                    <values source="cuentas" fieldcode="idcuenta" fieldtitle="codcuenta" fieldfilter="codejercicio"/>
+                </widget>
+            </column>
+            <column name="special-account" titleurl="ListCuenta?activetab=ListCuentaEspecial" order="110">
+                <widget type="select" fieldname="codcuentaesp" onclick="EditCuentaEspecial">
+                    <values source="cuentasesp" fieldcode="codcuentaesp" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="debit" order="120">
+                <widget type="money" fieldname="debe" readonly="true"/>
+            </column>
+            <column name="credit" order="130">
+                <widget type="money" fieldname="haber" readonly="true"/>
+            </column>
+            <column name="balance" order="140">
+                <widget type="money" fieldname="saldo" readonly="true"/>
+            </column>
+        </group>
+    </columns>
+    <modals>
+        <group name="ledger" title="ledger" icon="fa-solid fa-book fa-fw">
+            <column name="date-from" title="from-date" numcolumns="12">
+                <widget type="date" fieldname="dateFrom" required="true"/>
+            </column>
+            <column name="date-to" title="until-date" numcolumns="12">
+                <widget type="date" fieldname="dateTo" required="true"/>
+            </column>
+            <column name="grouping-type" numcolumns="12">
+                <widget type="select" fieldname="groupingtype" translate="true" required="true">
+                    <values title="do-not-group">N</values>
+                </widget>
+            </column>
+            <column name="channel" numcolumns="12">
+                <widget type="number" fieldname="channel"/>
+            </column>
+            <column name="format" title="format" numcolumns="12">
+                <widget type="select" fieldname="format" required="true" translate="true"/>
+            </column>
+        </group>
+    </modals>
+</view>

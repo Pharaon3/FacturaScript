@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2023 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Artex Trading sa     <jcuello@artextrading.com>
+ * @author Carlos García Gómez  <carlos@facturascripts.com>
+-->
+<view>
+    <columns>
+        <group name="data" numcolumns="12">
+            <column name="code" description="optional" display="none" numcolumns="2" order="100">
+                <widget type="text" fieldname="codagente" icon="fa-solid fa-hashtag" maxlength="10" readonly="dinamic"/>
+            </column>
+            <column name="name" order="110">
+                <widget type="text" fieldname="nombre" required="true"/>
+            </column>
+            <column name="position" numcolumns="3" order="120">
+                <widget type="text" fieldname="cargo"/>
+            </column>
+            <column name="fiscal-id" titleurl="EditSettings?activetab=EditIdentificadorFiscal" numcolumns="2"
+                    order="130">
+                <widget type="select" fieldname="tipoidfiscal" required="true">
+                    <values source="idsfiscales" fieldcode="tipoidfiscal" fieldtitle="tipoidfiscal"/>
+                </widget>
+            </column>
+            <column name="fiscal-number" numcolumns="2" order="150">
+                <widget type="text" fieldname="cifnif" maxlength="30" icon="fa-solid fa-id-card"/>
+            </column>
+        </group>
+        <group name="other" numcolumns="12">
+            <column name="contact" numcolumns="3" order="100">
+                <widget type="autocomplete" fieldname="idcontacto" onclick="EditContacto">
+                    <values source="contactos" fieldcode="idcontacto" fieldtitle="descripcion"/>
+                </widget>
+            </column>
+            <column name="settlement-product" numcolumns="3" order="110">
+                <widget type="variante" fieldname="idproducto" match="idproducto" onclick="EditProducto"/>
+            </column>
+            <column name="creation-date" numcolumns="3" order="120">
+                <widget type="date" fieldname="fechaalta" readonly="true"/>
+            </column>
+            <column name="date-of-suspension" numcolumns="3" order="130">
+                <widget type="date" fieldname="fechabaja"/>
+            </column>
+            <column name="observations" numcolumns="12" order="140">
+                <widget type="textarea" fieldname="observaciones"/>
+            </column>
+        </group>
+    </columns>
+    <rows>
+        <row type="statistics">
+            <datalabel icon="fa-solid fa-money-bill-alt" label="pending-invoices-button" function="calcAgentInvoicePending"/>
+        </row>
+    </rows>
+</view>

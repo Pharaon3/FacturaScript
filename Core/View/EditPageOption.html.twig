@@ -1,0 +1,270 @@
+{#
+/**
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2023 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://www.gnu.org/licenses/.
+ */
+#}
+{% extends "Master/MenuBgTemplate.html.twig" %}
+{% from 'Macro/Forms.html.twig' import simpleSelect as simpleSelect %}
+
+{% block bodyHeaderOptions %}
+    {{ parent() }}
+    <div class="container-fluid mb-3">
+        {{ parent() }}
+        <div class="row">
+            <div class="col-4 d-print-none">
+                <a href="{{ fsc.backPage }}" class="btn btn-sm btn-secondary">
+                    <i class="fa-solid fa-arrow-left fa-fw" aria-hidden="true"></i>
+                    <span class="d-none d-md-inline-block">{{ trans('back') }}</span>
+                </a>
+                <a href="{{ fsc.url() ~ '?code=' ~ fsc.selectedViewName }}" class="btn btn-sm btn-secondary"
+                   title="{{ trans('refresh') }}">
+                    <i class="fa-solid fa-redo" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col text-end">
+                <h1 class="h4">
+                    {{ fsc.title }} <i class="{{ fsc.getPageData()['icon'] }}" aria-hidden="true"></i>
+                </h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <span class="text-info">{{ fsc.selectedViewName }}</span>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <input type="hidden" name="code" value="{{ fsc.selectedViewName }}"/>
+                            <div class="row">
+                                <div class="col">
+                                    <p>{{ trans('page-option-info') }}</p>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">
+                                                <i class="fa-solid fa-users"></i>
+                                            </span>
+                                        {% set userList = {'': trans('all')} | merge(fsc.getUserList()) %}
+                                        {{ simpleSelect(
+                                            'nick',
+                                            'nick',
+                                            fsc.selectedUser,
+                                            userList,
+                                            FALSE,
+                                            FALSE,
+                                            {'onChange': 'this.form.submit()'}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <form method="post" name="main_form" onsubmit="animateSpinner('add')">
+                        {{ formToken() }}
+                        <input type="hidden" name="action" value="save"/>
+                        <input type="hidden" name="code" value="{{ fsc.selectedViewName }}"/>
+                        <input type="hidden" name="nick" value="{{ fsc.selectedUser }}"/>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover mb-0">
+                                <thead>
+                                <tr>
+                                    <th>{{ trans('title') }}</th>
+                                    <th class="text-center">{{ trans('display') }}</th>
+                                    <th>{{ trans('level') }}</th>
+                                    <th>{{ trans('readonly') }}</th>
+                                    <th width="150">{{ trans('decimals') }}</th>
+                                    <th>{{ trans('width') }}</th>
+                                    <th class="text-end" width="130">{{ trans('sort') }}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for group in fsc.columns %}
+                                    {% for col in group.columns %}
+                                        {{ _self.editGroupColumn(col) }}
+                                    {% endfor %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                {% if fsc.model.exists() %}
+                                    <div class="col">
+                                        <button class="btn btn-spin-action btn-sm btn btn-danger" type="button"
+                                                onclick="deleteOptions();">
+                                            <i class="fa-solid fa-trash-alt fa-fw" aria-hidden="true"></i>
+                                            {{ trans('delete') }}
+                                        </button>
+                                    </div>
+                                {% endif %}
+                                <div class="col text-end">
+                                    <button class="btn btn-spin-action btn-sm btn btn-secondary" type="reset">
+                                        <i class="fa-solid fa-undo fa-fw" aria-hidden="true"></i> {{ trans('undo') }}
+                                    </button>
+                                    <button class="btn btn-spin-action btn-sm btn-primary" type="submit">
+                                        <i class="fa-solid fa-save fa-fw" aria-hidden="true"></i> {{ trans('save') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #FAFBFC;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function deleteOptions() {
+            bootbox.confirm({
+                title: "{{ trans('confirm-delete')|raw }}",
+                message: "{{ trans('are-you-sure') }}",
+                closeButton: false,
+                buttons: {
+                    cancel: {
+                        label: "<i class='fa-solid fa-times'></i> {{ trans('cancel') }}"
+                    },
+                    confirm: {
+                        label: "<i class='fa-solid fa-check'></i> {{ trans('delete') }}",
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        animateSpinner('add');
+                        document.main_form.action.value = 'delete';
+                        document.main_form.submit();
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock %}
+
+{% macro editGroupColumn(col) %}
+    <tr>
+        <td title="{{ trans('title') }}">
+            <input type="text" class="form-control" name="{{ col.name }}-title"
+                   placeholder="{{ trans(col.title) }}" autocomplete="off"/>
+        </td>
+        <td class="text-center">
+            {{ _self.editGroupColumnDisplay(col) }}
+        </td>
+        <td title="{{ trans('level') }}">
+            <input type="number" class="form-control" name="{{ col.name }}-level" min="0" max="99" step="1"
+                   value="{{ col.level }}"/>
+        </td>
+        <td title="{{ trans('readonly') }}">
+            {{ simpleSelect(
+                col.name ~ '-readonly',
+                col.name ~ '-readonly',
+                col.widget.readonly,
+                {'true':trans('yes'), 'false':trans('no'), 'dinamic':trans('auto')},
+                FALSE,
+                FALSE,
+                {}) }}
+        </td>
+        <td title="{{ trans('decimals') }}">
+            {% if col.widget.gridFormat() is not empty %}
+                <input type="number" name="{{ col.name }}-decimal" min="0" max="7" step="1"
+                       value="{{ col.widget.decimal }}" class="form-control"/>
+            {% endif %}
+        </td>
+        <td title="{{ trans('width') }}">
+            {{ simpleSelect(
+                col.name ~ '-numcolumns',
+                col.name ~ '-numcolumns',
+                col.numcolumns,
+                {'0':trans('auto'), '1':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', '8':'8', '9':'9', '10':'10', '11':'11', '12':'12'},
+                FALSE,
+                FALSE,
+                {}) }}
+        </td>
+        <td title="{{ trans('sort') }}">
+            <input type="number" name="{{ col.name }}-order" value="{{ col.order }}" class="form-control text-end"/>
+        </td>
+    </tr>
+{% endmacro %}
+
+{% macro editGroupColumnDisplay(col) %}
+    <div class="btn-group" role="group">
+        {% if col.display == 'start' %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-start-display" value="start" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-start-display" title="{{ trans('left') }}">
+                <i class="fa-solid fa-align-left"></i>
+            </label>
+        {% else %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-start-display" value="start" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-start-display" title="{{ trans('left') }}">
+                <i class="fa-solid fa-align-left"></i>
+            </label>
+        {% endif %}
+
+        {% if col.display == 'center' %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-center-display" value="center" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-center-display" title="{{ trans('center') }}">
+                <i class="fa-solid fa-align-center"></i>
+            </label>
+        {% else %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-center-display" value="center" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-center-display" title="{{ trans('center') }}">
+                <i class="fa-solid fa-align-center"></i>
+            </label>
+        {% endif %}
+
+        {% if col.display == 'end' %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-end-display" value="end" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-end-display" title="{{ trans('right') }}">
+                <i class="fa-solid fa-align-right"></i>
+            </label>
+        {% else %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-end-display" value="end" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-end-display" title="{{ trans('right') }}">
+                <i class="fa-solid fa-align-right"></i>
+            </label>
+        {% endif %}
+
+        {% if col.display == 'none' %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-none-display" value="none" autocomplete="off" checked>
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-none-display" title="{{ trans('hide') }}">
+                <i class="fa-solid fa-eye-slash"></i>
+            </label>
+        {% else %}
+            <input type="radio" class="btn-check" name="{{ col.name }}-display" id="{{ col.name }}-none-display" value="none" autocomplete="off">
+            <label class="btn btn-outline-secondary" for="{{ col.name }}-none-display" title="{{ trans('hide') }}">
+                <i class="fa-solid fa-eye-slash"></i>
+            </label>
+        {% endif %}
+    </div>
+{% endmacro %}

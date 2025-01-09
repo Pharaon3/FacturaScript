@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : users.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the users table.
+-->
+<table>
+    <column>
+        <name>admin</name>
+        <type>boolean</type>
+        <null>NO</null>
+        <default>false</default>
+    </column>
+    <column>
+        <name>codagente</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codalmacen</name>
+        <type>character varying(4)</type>
+    </column>
+    <column>
+        <name>creationdate</name>
+        <type>date</type>
+    </column>
+    <column>
+        <name>email</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>enabled</name>
+        <type>boolean</type>
+        <null>NO</null>
+        <default>true</default>
+    </column>
+    <column>
+        <name>homepage</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>idempresa</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>langcode</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>lastactivity</name>
+        <type>timestamp</type>
+    </column>
+    <column>
+        <name>lastbrowser</name>
+        <type>character varying(200)</type>
+    </column>
+    <column>
+        <name>lastip</name>
+        <type>character varying(40)</type>
+    </column>
+    <column>
+        <name>level</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>logkey</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>nick</name>
+        <type>character varying(50)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>password</name>
+        <type>character varying(255)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>two_factor_enabled</name>
+        <type>boolean</type>
+        <null>NO</null>
+        <default>false</default>
+    </column>
+    <column>
+        <name>two_factor_secret_key</name>
+        <type>character varying(32)</type>
+    </column>
+    <constraint>
+        <name>users_pkey</name>
+        <type>PRIMARY KEY (nick)</type>
+    </constraint>
+    <constraint>
+        <name>ca_users_pages</name>
+        <type>FOREIGN KEY (homepage) REFERENCES pages (name) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_users_company</name>
+        <type>FOREIGN KEY (idempresa) REFERENCES empresas (idempresa) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : asientos.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the asientos table.
+-->
+<table>
+    <column>
+        <name>canal</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>codejercicio</name>
+        <type>character varying(4)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>concepto</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>documento</name>
+        <type>character varying(50)</type>
+    </column>
+    <column>
+        <name>editable</name>
+        <type>boolean</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>fecha</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idasiento</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>iddiario</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>idempresa</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>importe</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>numero</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>operacion</name>
+        <type>character varying(1)</type>
+    </column>
+    <constraint>
+        <name>asientos_pkey</name>
+        <type>PRIMARY KEY (idasiento)</type>
+    </constraint>
+    <constraint>
+        <name>ca_asientos_diarios</name>
+        <type>FOREIGN KEY (iddiario) REFERENCES diarios (iddiario) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_asientos_ejercicios</name>
+        <type>FOREIGN KEY (codejercicio) REFERENCES ejercicios (codejercicio) ON DELETE RESTRICT ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_asientos_empresas</name>
+        <type>FOREIGN KEY (idempresa) REFERENCES empresas (idempresa) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+</table>

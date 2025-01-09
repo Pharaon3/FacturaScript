@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : contactos.xml
+    Description:
+        Structure for the contactos table.
+-->
+<table>
+    <column>
+        <name>aceptaprivacidad</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <column>
+        <name>admitemarketing</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <column>
+        <name>apellidos</name>
+        <type>character varying(150)</type>
+    </column>
+    <column>
+        <name>apartado</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>cargo</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>cifnif</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>ciudad</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>codagente</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codcliente</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codpais</name>
+        <type>character varying(20)</type>
+    </column>
+    <column>
+        <name>codpostal</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>codproveedor</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>descripcion</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>direccion</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>email</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>empresa</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>fechaalta</name>
+        <type>date</type>
+    </column>
+    <column>
+        <name>idcontacto</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>langcode</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>nombre</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>observaciones</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>personafisica</name>
+        <type>boolean</type>
+        <default>true</default>
+    </column>
+    <column>
+        <name>provincia</name>
+        <type>character varying(100)</type>
+    </column>
+    <column>
+        <name>telefono1</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>telefono2</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>tipoidfiscal</name>
+        <type>character varying(25)</type>
+    </column>
+    <column>
+        <name>verificado</name>
+        <type>boolean</type>
+        <default>false</default>
+    </column>
+    <column>
+        <name>web</name>
+        <type>character varying(100)</type>
+    </column>
+    <constraint>
+        <name>contactos_pkey</name>
+        <type>PRIMARY KEY (idcontacto)</type>
+    </constraint>
+    <constraint>
+        <name>ca_contactos_agentes</name>
+        <type>FOREIGN KEY (codagente) REFERENCES agentes (codagente) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_contactos_clientes</name>
+        <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_contactos_proveedores</name>
+        <type>FOREIGN KEY (codproveedor) REFERENCES proveedores (codproveedor) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

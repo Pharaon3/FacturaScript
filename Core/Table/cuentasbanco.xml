@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : cuentasbanco.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the cuentasbanco table.
+-->
+<table>
+    <column>
+        <name>activa</name>
+        <type>boolean</type>
+        <default>true</default>
+    </column>
+    <column>
+        <name>codcuenta</name>
+        <type>character varying(10)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codsubcuenta</name>
+        <type>character varying(15)</type>
+    </column>
+    <column>
+        <name>codsubcuentagasto</name>
+        <type>character varying(15)</type>
+    </column>
+    <column>
+        <name>descripcion</name>
+        <type>character varying(100)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>iban</name>
+        <type>character varying(34)</type>
+    </column>
+    <column>
+        <name>idempresa</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>sufijosepa</name>
+        <type>character varying(3)</type>
+    </column>
+    <column>
+        <name>swift</name>
+        <type>character varying(11)</type>
+    </column>
+    <constraint>
+        <name>cuentasbanco_pkey</name>
+        <type>PRIMARY KEY (codcuenta)</type>
+    </constraint>
+    <constraint>
+        <name>ca_cuentasbanco_empresas</name>
+        <type>FOREIGN KEY (idempresa) REFERENCES empresas (idempresa) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+</table>

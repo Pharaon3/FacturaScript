@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : subcuentas.xml
+    Author     : Carlos Garcia Gomez
+    Description:
+        Structure for the subcuentas table.
+-->
+<table>
+    <column>
+        <name>codcuenta</name>
+        <type>character varying(10)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codcuentaesp</name>
+        <type>character varying(6)</type>
+    </column>
+    <column>
+        <name>codejercicio</name>
+        <type>character varying(4)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>codsubcuenta</name>
+        <type>character varying(15)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>debe</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>descripcion</name>
+        <type>character varying(255)</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>haber</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <column>
+        <name>idcuenta</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idsubcuenta</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>saldo</name>
+        <type>double precision</type>
+        <null>NO</null>
+        <default>0</default>
+    </column>
+    <constraint>
+        <name>subcuentas_pkey</name>
+        <type>PRIMARY KEY (idsubcuenta)</type>
+    </constraint>
+    <constraint>
+        <name>uniq_codsubcuenta</name>
+        <type>UNIQUE (codsubcuenta,codejercicio)</type>
+    </constraint>
+    <constraint>
+        <name>ca_subcuentas_ejercicios</name>
+        <type>FOREIGN KEY (codejercicio) REFERENCES ejercicios (codejercicio) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_subcuentas_cuentas</name>
+        <type>FOREIGN KEY (idcuenta) REFERENCES cuentas (idcuenta) ON DELETE CASCADE ON UPDATE CASCADE</type>
+    </constraint>
+    <constraint>
+        <name>ca_subcuentas_cuentasesp</name>
+        <type>FOREIGN KEY (codcuentaesp) REFERENCES cuentasesp (codcuentaesp) ON DELETE SET NULL ON UPDATE CASCADE</type>
+    </constraint>
+</table>

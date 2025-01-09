@@ -1,0 +1,4 @@
+codimpuesto,descripcion,iva,recargo
+IVA_BASICO,"Tasa Básica",22,0
+IVA_MINIMO,"Tasa Mínima",10,0
+IVA_ZF,"Zonas Francas Exentas",0,0

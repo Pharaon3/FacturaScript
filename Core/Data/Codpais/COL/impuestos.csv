@@ -1,0 +1,4 @@
+codimpuesto,descripcion,iva,recargo
+IVA19,"IVA general 19%",19,0
+IVA5,"IVA reducido 5%",5,0
+IVA0,"IVA exento",0,0

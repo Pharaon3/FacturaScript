@@ -1,0 +1,319 @@
+{#
+/**
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://www.gnu.org/licenses/.
+ */
+#}
+{% extends "Master/MenuBgTemplate.html.twig" %}
+{% set pageData = fsc.getPageData() %}
+
+{% block body %}
+    <form action="{{ fsc.url() }}" method="post" name="formDocStitcher">
+        {{ formToken() }}
+        <input type="hidden" name="model" value="{{ fsc.modelName }}"/>
+        <input type="hidden" name="status"/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h1 class="h3">
+                        <i class="{{ pageData.icon }} me-2" aria-hidden="true"></i> {{ trans(pageData.title) }}
+                    </h1>
+                    <p>{{ trans('group-or-split-p') }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-6 mb-2">
+                    <select name="codserie" class="form-select">
+                        <option value="">{{ trans('serie') }}</option>
+                        <option value="">------</option>
+                        {% for item in fsc.getSeries() %}
+                            {% if item.code is same as(fsc.documents[0].codserie) %}
+                                <option value="{{ item.code }}" selected>{{ item.description }}</option>
+                            {% else %}
+                                <option value="{{ item.code }}">{{ item.description }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-2">
+                    <input type="date" name="fecha" value="{{ task.end | date('Y-m-d') }}" class="form-control"
+                           autocomplete="off"/>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-2">
+                    <select name="extralines" class="form-select">
+                        <option value="true">{{ trans('add-extra-lines') }}</option>
+                        <option value="false">{{ trans('no-extra-lines') }}</option>
+                    </select>
+                </div>
+                <div class="col mb-2">
+                    <div class="dropdown">
+                        <button class="btn btn-spin-action btn-primary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-magic fa-fw"></i> {{ trans('generate') }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {% set availableStatus = fsc.getAvailableStatus() %}
+                            {% for status in availableStatus %}
+                                <button type="button" onclick="sendFormData('{{ status.primaryColumnValue() }}');"
+                                        class="dropdown-item">
+                                    <i class="{{ status.icon() }} fa-fw" aria-hidden="true"></i>
+                                    {{ trans(status.generadoc) }}
+                                </button>
+                            {% endfor %}
+                            <div class="dropdown-divider"></div>
+                            {% for status in availableStatus %}
+                                <button type="button" onclick="sendFormData('close:{{ status.primaryColumnValue() }}');"
+                                        class="dropdown-item text-danger">
+                                    <i class="fa-solid fa-lock fa-fw" aria-hidden="true"></i>
+                                    {% if availableStatus | length > 1 %}
+                                        {{ trans('close') }}: {{ trans(status.generadoc) }}
+                                    {% else %}
+                                        {{ trans('close') }}
+                                    {% endif %}
+                                </button>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-end mb-2">
+                    <div class="dropdown">
+                        <button class="btn btn-spin-action btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-check-square fa-fw"></i> {{ trans('selected-quantity') }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="#" onClick="return selectNone();">
+                                <i class="far fa-square fa-fw"></i> {{ trans('select-none') }}
+                            </a>
+                            <a class="dropdown-item" href="#" onClick="return selectAll();">
+                                <i class="fa-solid fa-square fa-fw"></i> {{ trans('select-all') }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-3">
+                    {% for doc in fsc.documents %}
+                        <input type="hidden" name="codes[]" value="{{ doc.primaryColumnValue() }}"/>
+                        {{ _self.documentCard(doc, fsc) }}
+                    {% else %}
+                        <div class="alert alert-dismissible alert-warning" role="alert">{{ trans('no-data') }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {% if fsc.moreDocuments %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col mt-3">
+                    <form action="{{ fsc.url() }}" method="post" onsubmit="animateSpinner('add')">
+                        {{ formToken() }}
+                        <input type="hidden" name="model" value="{{ fsc.modelName }}">
+                        <input type="hidden" name="codes" value="{{ fsc.codes | join(',') }}">
+                        <div class="card border-success shadow mb-2">
+                            <div class="card-body p-2">
+                                <button class="btn btn-spin-action btn-sm btn-outline-success" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#moreDocsCollapse" aria-expanded="false">
+                                    <i class="fa-solid fa-plus-square fa-fw" aria-hidden="true"></i>
+                                    {{ trans('more') }}
+                                </button>
+                                &nbsp; {{ trans('group-more-docs-p') }}
+                            </div>
+                            <div class="collapse" id="moreDocsCollapse">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox" onclick="checkAllDoc(this)" class="ms-1"></th>
+                                            <th>{{ trans('code') }}</th>
+                                            <th>{{ trans('observations') }}</th>
+                                            <th>{{ trans('payment-method') }}</th>
+                                            <th class="text-end">{{ trans('total') }}</th>
+                                            <th class="text-end">{{ trans('date') }}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for doc in fsc.moreDocuments %}
+                                            <tr>
+                                                <td class="text-center" width="50">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                               name="newcodes[]" value="{{ doc.primaryColumnValue() }}">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ doc.url() }}">{{ doc.codigo }}</a>
+                                                    {% if doc.numero2 %}
+                                                        {{ doc.numero2 }}
+                                                    {% elseif doc.numproveedor %}
+                                                        {{ doc.numproveedor }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ doc.observaciones | slice(0, 60) | raw }}</td>
+                                                <td>{{ doc.getPaymentMethod().descripcion }}</td>
+                                                <td class="text-end text-nowrap">{{ money(doc.total) }}</td>
+                                                <td class="text-end text-nowrap">
+                                                    {{ doc.fecha }} <span class="small">{{ doc.hora }}</span>
+                                                </td>
+                                            </tr>
+                                        {% else %}
+                                            <tr class="table-warning">
+                                                <td></td>
+                                                <td colspan="5">{{ trans('no-data') }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer p-2">
+                                    <button type="submit" class="btn btn-spin-action btn-success">
+                                        {{ trans('add') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <style>
+        .td-quantity {
+            width: 165px;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function checkAllDoc(input) {
+            if (input.checked) {
+                $('#moreDocsCollapse input[name="newcodes[]"]').prop('checked', true);
+            } else {
+                $('#moreDocsCollapse input[name="newcodes[]"]').prop('checked', false);
+            }
+        }
+
+        function selectAll() {
+            const inputToServe = document.getElementsByClassName("to_serve");
+            const inputToBeServed = document.getElementsByClassName("to_be_served");
+            for (let i = 0; i < inputToBeServed.length; i++) {
+                inputToBeServed.item(i).value = inputToServe.item(i).value;
+            }
+
+            return false;
+        }
+
+        function selectNone() {
+            const inputToBeServed = document.getElementsByClassName("to_be_served");
+            for (let i = 0; i < inputToBeServed.length; i++) {
+                inputToBeServed.item(i).value = 0;
+            }
+
+            return false;
+        }
+
+        function sendFormData(status) {
+            animateSpinner('add');
+            document.formDocStitcher.status.value = status;
+            document.formDocStitcher.submit();
+        }
+    </script>
+{% endblock %}
+
+{% macro documentCard(doc, fsc) %}
+    <div class="card shadow mb-3">
+        <div class="p-2">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="h5 mb-1">
+                        <i class="fa-solid fa-file me-2" aria-hidden="true"></i> {{ trans(fsc.modelName) }}
+                        <a href="{{ doc.url() }}">{{ doc.codigo }}</a>
+                        {% if doc.numero2 %}
+                            {{ doc.numero2 }}
+                        {% elseif doc.numproveedor %}
+                            {{ doc.numproveedor }}
+                        {% endif %}
+                    </div>
+                    {% if doc.observaciones %}
+                        <p class="mb-2">{{ doc.observaciones | raw }}</p>
+                    {% endif %}
+                </div>
+                <div class="col-sm-3 text-end">
+                    <p class="small mb-0">
+                        <i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i> {{ doc.fecha }}
+                        &nbsp;
+                        <i class="far fa-clock fa-fw" aria-hidden="true"></i> {{ doc.hora }}
+                        <br/>
+                        {{ trans('net') }}: {{ money(doc.neto) }}
+                        &nbsp;
+                        {{ trans('taxes') }}: {{ money(doc.totaliva) }}
+                        &nbsp;
+                        {{ trans('total') }}: {{ money(doc.total) }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>{{ trans('reference') }}</th>
+                    <th>{{ trans('description') }}</th>
+                    <th class="text-end td-quantity">{{ trans('quantity') }}</th>
+                    <th class="text-end td-quantity">{{ trans('quantity-served') }}</th>
+                    <th class="text-end td-quantity">{{ trans('selected-quantity') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for line in doc.getLines() %}
+                    <tr>
+                        <td class="align-middle">{{ line.referencia }}</td>
+                        <td class="align-middle">{{ line.descripcion | raw | nl2br }}</td>
+                        <td>
+                            <input type="number" value="{{ line.cantidad }}" class="form-control text-end"
+                                   readonly="true"/>
+                        </td>
+                        <td class="{{ servido == 0 ? '' : 'table-warning' }}">
+                            <input type="number" value="{{ line.servido }}" class="form-control text-end"
+                                   readonly="true"/>
+                        </td>
+                        {% set newQuantity = line.cantidad - line.servido %}
+                        <td class="{{ newQuantity == 0 ? 'table-warning' : 'table-success' }}">
+                            <input type="hidden" class="to_serve" value="{{ newQuantity }}"/>
+                            <input type="number" name="approve_quant_{{ line.primaryColumnValue() }}"
+                                   value="{{ newQuantity }}" step="any" min="0" max="{{ line.cantidad }}"
+                                   class="form-control text-end to_be_served" autocomplete="off"/>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="table-warning">
+                        <td colspan="5">{{ trans('no-data') }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endmacro %}

@@ -1,0 +1,244 @@
+<?php
+/**
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+namespace FacturaScripts\Core\Lib\Widget;
+
+/**
+ * Description of VisualItem
+ *
+ * @author Carlos García Gómez <carlos@facturascripts.com>
+ */
+class VisualItem
+{
+
+    /**
+     * @var string
+     */
+    public $class;
+
+    /**
+     * Identifies the object with a defined name in the view
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
+     * Selected security level.
+     *
+     * @var int
+     */
+    private static $level = 0;
+
+    /**
+     * Name defined in the view as key
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @var string
+     */
+    private static $token = '';
+
+    /**
+     * @var int
+     */
+    protected static $uniqueId = -1;
+
+    /**
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        $this->class = $data['class'] ?? '';
+        $this->id = $data['id'] ?? '';
+        $this->name = $data['name'] ?? '';
+    }
+
+    /**
+     * @return int
+     */
+    public static function getLevel(): int
+    {
+        return self::$level;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getToken(): string
+    {
+        return self::$token;
+    }
+
+    /**
+     * @param int $new
+     */
+    public static function setLevel(int $new)
+    {
+        self::$level = $new;
+    }
+
+    /**
+     * @param string $token
+     */
+    public static function setToken(string $token)
+    {
+        self::$token = $token;
+    }
+
+    /**
+     * @param string $color
+     * @param string $prefix
+     *
+     * @return string
+     */
+    protected function colorToClass(string $color, string $prefix): string
+    {
+        switch ($color) {
+            case 'danger':
+            case 'dark':
+            case 'info':
+            case 'light':
+            case 'outline-danger':
+            case 'outline-dark':
+            case 'outline-info':
+            case 'outline-light':
+            case 'outline-primary':
+            case 'outline-secondary':
+            case 'outline-success':
+            case 'outline-warning':
+            case 'primary':
+            case 'secondary':
+            case 'success':
+            case 'warning':
+                return $prefix . $color;
+        }
+
+        return '';
+    }
+
+    /**
+     * Calculate color from option configuration
+     *
+     * @param string[] $option
+     * @param mixed $value
+     * @param string $prefix
+     *
+     * @return string
+     */
+    public function getColorFromOption($option, $value, $prefix): string
+    {
+        return $this->applyOperatorFromOption($option, $value) ? $this->colorToClass($option['color'], $prefix) : '';
+    }
+
+    /**
+     * @param string[] $option
+     * @param mixed $value
+     *
+     * @return bool
+     */
+    protected function applyOperatorFromOption($option, $value): bool
+    {
+        $text = $option['text'] ?? '';
+
+        $applyOperator = '';
+        $operators = ['>', 'gt:', 'gte:', '<', 'lt:', 'lte:', '!', 'neq:', 'like:', 'null:', 'notnull:'];
+        foreach ($operators as $operator) {
+            if (0 === strpos($text, $operator)) {
+                $applyOperator = $operator;
+                break;
+            }
+        }
+
+        $matchValue = substr($text, strlen($applyOperator));
+        $apply = $matchValue == $value;
+
+        switch ($applyOperator) {
+            case '>':
+            case 'gt:':
+                return (float)$value > (float)$matchValue;
+
+            case 'gte:':
+                return (float)$value >= (float)$matchValue;
+
+            case '<':
+            case 'lt:':
+                return (float)$value < (float)$matchValue;
+
+            case 'lte:':
+                return (float)$value <= (float)$matchValue;
+
+            case '!':
+            case 'neq:':
+                return $value != $matchValue;
+
+            case 'like:':
+                return false !== stripos($value, $matchValue);
+
+            case 'null:':
+                return null === $value;
+
+            case 'notnull:':
+                return null !== $value;
+        }
+
+        return $apply;
+    }
+
+    /**
+     * @param array $classes
+     *
+     * @return string
+     */
+    protected function combineClasses(...$classes): string
+    {
+        $mix = [];
+        foreach ($classes as $class) {
+            if (!empty($class)) {
+                $mix[] = $class;
+            }
+        }
+
+        return implode(' ', $mix);
+    }
+
+    /**
+     * Returns equivalent css class to $class. To extend in plugins.
+     *
+     * @param string $class
+     *
+     * @return string
+     */
+    protected function css(string $class): string
+    {
+        return $class;
+    }
+
+    /**
+     * @return int
+     */
+    protected function getUniqueId(): int
+    {
+        static::$uniqueId++;
+        return static::$uniqueId;
+    }
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of FacturaScripts
+ * Copyright (C) 2017-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @author Artex Trading sa     <jcuello@artextrading.com>
+ * @author Carlos García Gómez  <carlos@facturascripts.com>
+-->
+<view>
+    <columns>
+        <group name="data" numcolumns="12">
+            <column name="code" display="none" order="100">
+                <widget type="number" fieldname="codcuenta" decimal="0" readonly="true"/>
+            </column>
+            <column name="description" order="110">
+                <widget type="text" fieldname="descripcion" maxlength="100" required="true"/>
+            </column>
+            <column name="swift" numcolumns="2" order="120">
+                <widget type="text" fieldname="swift" maxlength="11"/>
+            </column>
+            <column name="iban" order="130">
+                <widget type="text" fieldname="iban" maxlength="34"/>
+            </column>
+        </group>
+        <group name="accounting" numcolumns="12">
+            <column name="company" titleurl="ListEmpresa" numcolumns="2" order="100">
+                <widget type="select" fieldname="idempresa" icon="fa-solid fa-building" onclick="EditEmpresa" required="true"
+                        readonly="dinamic">
+                    <values source="empresas" fieldcode="idempresa" fieldtitle="nombrecorto"/>
+                </widget>
+            </column>
+            <column name="sepa-suffix" numcolumns="2" order="110">
+                <widget type="text" fieldname="sufijosepa" maxlength="3"/>
+            </column>
+            <column name="subaccount" description="related-subaccount-purchases-sales" titleurl="ListCuenta"
+                    order="120">
+                <widget type="autocomplete" fieldname="codsubcuenta">
+                    <values source="subcuentas" fieldcode="codsubcuenta"/>
+                </widget>
+            </column>
+            <column name="expense-subaccount" description="related-subaccount-bank-charges" titleurl="ListCuenta"
+                    order="130">
+                <widget type="autocomplete" fieldname="codsubcuentagasto">
+                    <values source="subcuentas" fieldcode="codsubcuenta"/>
+                </widget>
+            </column>
+        </group>
+        <group name="extra" numcolumns="12" valign="bottom">
+            <column name="active" order="200">
+                <widget type="checkbox" fieldname="activa"/>
+            </column>
+        </group>
+    </columns>
+</view>

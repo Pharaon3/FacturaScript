@@ -1,0 +1,38 @@
+{
+  "name": "facturascripts",
+  "description": "Open source ERP software. Built on modern PHP and bootstrap 4. Easy and powerful.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoRazorX/facturascripts.git"
+  },
+  "keywords": [
+    "facturascripts",
+    "php",
+    "invoice",
+    "erp",
+    "crm",
+    "billing",
+    "accounting"
+  ],
+  "author": "Carlos García Gómez",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://facturascripts.com/contacto"
+  },
+  "homepage": "https://facturascripts.com",
+  "dependencies": {
+    "@eastdesire/jscolor": "^2.5.2",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@ttskch/select2-bootstrap4-theme": "^1.5.2",
+    "bootstrap": "5.*",
+    "chart.js": "2.*",
+    "jquery": "^3.6.4",
+    "jquery-ui-dist": "1.12.*",
+    "pace-js": "1.*",
+    "select2": "^4.0.13"
+  }
+}
